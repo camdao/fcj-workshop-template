@@ -13,7 +13,7 @@ chapter: false
 {{% /notice %}}
 
 ### Student Information:
-&emsp; **Full Name:** Luong Cam 
+&emsp; **Full Name:** Luong Cam Dao
 
 &emsp; **Phone Number:** 0794699839 
 
@@ -31,7 +31,7 @@ chapter: false
 
 &emsp; **Internship Duration:** From 22/06/2026 to 15/08/2026
 
-![Your profile picture](/images/avatar.png)
+![Your profile picture](/images/avatarcamdao.png)
 
 ### Report Content
 
