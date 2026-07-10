@@ -5,55 +5,76 @@ weight: 1
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
-{{% notice warning %}}
+<!-- {{% notice warning %}}
 ⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+{{% /notice %}} -->
 
 
 ### Mục tiêu tuần 2:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Nắm vững kiến thức cơ bản về Amazon EC2 (Elastic Compute Cloud) và compute fundamentals.
+* Tìm hiểu instance profiling với IAM Roles cho EC2.
+* Hiểu về EC2 instance types, AMI, storage và networking.
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Tìm hiểu EC2 Compute Essentials: <br>&emsp; + Các loại và họ EC2 instance <br>&emsp; + Vòng đời và trạng thái instance <br>&emsp; + Các mô hình giá (On-Demand, Reserved, Spot) <br>&emsp; + AMI (Amazon Machine Images) | 18/06/2026   | 18/06/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 3   | - Tìm hiểu EC2 Storage & Networking: <br>&emsp; + EBS (Elastic Block Store) <br>&emsp; + Các loại EBS volume <br>&emsp; + Security Groups <br>&emsp; + Key pairs <br>&emsp; + Elastic IP  | 19/06/2026   | 19/06/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 4   | - **Thực hành:** <br>&emsp; + Khởi tạo EC2 instances <br>&emsp; + Cấu hình Security Groups <br>&emsp; + Kết nối qua SSH <br>&emsp; + Gắn và quản lý EBS volumes                           | 20/06/2026   | 20/06/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 5   | - Tìm hiểu IAM Roles cho EC2: <br>&emsp; + Instance profiles <br>&emsp; + Gắn IAM roles vào EC2 <br>&emsp; + Quản lý AWS credentials <br>&emsp; + Best practices cho EC2 security          | 21/06/2026   | 21/06/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 6   | - **Thực hành:** <br>&emsp; + Tạo IAM roles cho EC2 <br>&emsp; + Gắn roles vào instances <br>&emsp; + Kiểm tra permissions <br>&emsp; + Truy cập AWS services từ EC2 sử dụng IAM roles    | 22/06/2026   | 22/06/2026      | <https://cloudjourney.awsstudygroup.com/> |
 
 
 ### Kết quả đạt được tuần 2:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Nắm vững kiến thức cơ bản về Amazon EC2:
+  * Các loại và họ EC2 instance (General Purpose, Compute Optimized, Memory Optimized, v.v.)
+  * Vòng đời và trạng thái instance (pending, running, stopped, terminated)
+  * Các mô hình giá (On-Demand, Reserved Instances, Spot Instances, Savings Plans)
+  * Hiểu khi nào nên sử dụng các loại instance khác nhau
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Tìm hiểu về Amazon Machine Images (AMI):
+  * Các loại và nguồn AMI
+  * Tạo custom AMIs
+  * Chia sẻ và sao chép AMI qua các regions
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Hiểu về các tùy chọn storage của EC2:
+  * Các loại EBS (Elastic Block Store) volume (gp3, gp2, io2, st1, sc1)
+  * Chiến lược EBS snapshots và backup
+  * Instance store vs. EBS
+  * Gắn và tháo volumes
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Nắm vững kiến thức cơ bản về EC2 networking:
+  * Cấu hình Security Groups và rules
+  * Network interfaces (ENI)
+  * Elastic IP addresses
+  * Quản lý SSH key pairs
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Thành công trong việc khởi tạo và quản lý EC2 instances:
+  * Tạo instances với các cấu hình khác nhau
+  * Kết nối đến instances qua SSH
+  * Cấu hình Security Groups cho kiểm soát truy cập phù hợp
+  * Gắn và quản lý EBS volumes
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+* Tìm hiểu Instance Profiling với IAM Roles cho EC2:
+  * Hiểu về instance profiles
+  * Tạo IAM roles cho EC2 instances
+  * Gắn IAM roles vào running instances
+  * Best practices cho EC2 security và permissions
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+* Thực hành triển khai IAM Roles:
+  * Tạo IAM roles với các policies phù hợp
+  * Gắn roles vào EC2 instances
+  * Kiểm tra quyền truy cập AWS services từ EC2 sử dụng roles
+  * Loại bỏ nhu cầu hardcode credentials
+
+* Hiểu các best practices về EC2 security:
+  * Nguyên tắc least privilege cho IAM roles
+  * Quản lý Security Group rules
+  * Quản lý SSH keys
+  * Cập nhật và vá lỗi thường xuyên
+
+* Có kinh nghiệm thực tế với EC2 automation và quản lý qua Console và CLI.
 
 

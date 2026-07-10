@@ -1,125 +1,140 @@
 ---
-title: "Event 1"
-date: 2024-01-01
+title: "AWS: Kiến trúc Cloud doanh nghiệp và Ứng dụng thực tế"
+date: 2026-07-04
 weight: 1
 chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-{{% notice warning %}}
+<!-- {{% notice warning %}}
 ⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+{{% /notice %}} -->
 
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
+# Báo cáo tổng kết: "AWS: Enterprise Cloud Architectures and Industry Application featuring Cloud Kinetics & Renova Cloud"
 
-### Mục Đích Của Sự Kiện
+**Ngày sự kiện:** 4 tháng 7, 2026
 
-- Chia sẻ best practices trong thiết kế ứng dụng hiện đại
-- Giới thiệu phương pháp DDD và event-driven architecture
-- Hướng dẫn lựa chọn compute services phù hợp
-- Giới thiệu công cụ AI hỗ trợ development lifecycle
+### Tổng quan sự kiện
 
-### Danh Sách Diễn Giả
+Sự kiện tập hợp các chuyên gia trong ngành và sinh viên để thảo luận về bối cảnh phát triển của điện toán đám mây, tập trung vào kiến trúc doanh nghiệp, phát triển nghề nghiệp trong công nghệ cloud và ứng dụng thực tế trong data engineering.
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+### Diễn giả
 
-### Nội Dung Nổi Bật
+- **Đại diện từ Cloud Kinetics & Renova Cloud** – Các chuyên gia thực tế chia sẻ kinh nghiệm về enterprise cloud
+- **Anh Bành Cẩm Vĩnh** – Data Engineer với 5 năm kinh nghiệm tại Siêu Việt Group, Heineken và ZaloPay
+- **Chị Như Trần** – Account Manager tại AWS
+- **Các chuyên gia khác trong ngành** – Thảo luận về chiến lược cloud-first và phát triển chuyên môn
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
+### Nội dung chính
 
-- Thời gian release sản phẩm lâu → Mất doanh thu/bỏ lỡ cơ hội
-- Hoạt động kém hiệu quả → Mất năng suất, tốn kém chi phí
-- Không tuân thủ các quy định về bảo mật → Mất an ninh, uy tín
+#### Xu hướng Cloud Computing và Tổng quan thị trường
 
-#### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
+- **Chiến lược Cloud-first** đã trở thành xu hướng tất yếu tại các doanh nghiệp lớn
+- Dù giá khởi điểm có thể thấp, nhưng quy mô tổng thể của thị trường cloud đã vượt xa phần cứng truyền thống
+- Việc áp dụng cloud tại doanh nghiệp đang tăng tốc, khiến kỹ năng cloud trở nên thiết yếu cho các chuyên gia công nghệ
 
-Chuyển đổi thành hệ thống modular – từng chức năng là một **dịch vụ độc lập** giao tiếp với nhau qua **sự kiện** với 3 trụ cột cốt lõi:
+#### Kỹ năng nghề nghiệp và Phát triển sự nghiệp
 
-- **Queue Management**: Xử lý tác vụ bất đồng bộ
-- **Caching Strategy:** Tối ưu performance
-- **Message Handling:** Giao tiếp linh hoạt giữa services
+**Networking và Cơ hội việc làm:**
+- 90-100% cơ hội việc làm tại các công ty công nghệ lớn đến từ tuyển dụng nội bộ hoặc giới thiệu
+- Xây dựng mối quan hệ chuyên môn (networking) rất quan trọng cho sự phát triển nghề nghiệp
+- Chứng chỉ quốc tế chủ yếu giúp vượt qua vòng lọc CV tự động bởi AI, nhưng không thay thế được năng lực thực tế
 
-#### Domain-Driven Design (DDD)
+**Tư duy nghề nghiệp:**
+- Luôn đặt câu hỏi "Tại sao?" để phát triển tư duy phản biện
+- Học hỏi từ thất bại và sai lầm
+- Duy trì thái độ "stay hungry" (luôn khao khát) để cải thiện liên tục
+- Phát triển cả kỹ năng kỹ thuật và kỹ năng mềm
 
-- **Phương pháp 4 bước**: Xác định domain events → sắp xếp timeline → identify actors → xác định bounded contexts
-- **Case study bookstore**: Minh họa cách áp dụng DDD thực tế
-- **Context mapping**: 7 patterns tích hợp bounded contexts
+#### Data Engineering trong thực tế
 
-#### Event-Driven Architecture
+**Hành trình của anh Bành Cẩm Vĩnh (5 năm kinh nghiệm):**
+- Làm việc trong nhiều môi trường khác nhau: Siêu Việt Group, Heineken, ZaloPay
+- Nhấn mạnh rằng kỹ sư phải hiểu về nghiệp vụ kinh doanh, không chỉ triển khai kỹ thuật
+- Các giải pháp thành công cần cân bằng giữa khả năng kỹ thuật và yêu cầu kinh doanh
+- Các dịch vụ cloud nên được phối hợp như lắp ghép một đội bóng – mỗi dịch vụ đóng một vai trò cụ thể
 
-- **3 patterns tích hợp**: Publish/Subscribe, Point-to-point, Streaming
-- **Lợi ích**: Loose coupling, scalability, resilience
-- **So sánh sync vs async**: Hiểu rõ trade-offs (sự đánh đổi)
+#### Kỹ năng mềm và Phát triển chuyên môn
 
-#### Compute Evolution
+**Những hiểu biết quan trọng từ chị Như Trần (Account Manager tại AWS):**
+- Vượt qua nỗi sợ thất bại là điều cần thiết cho sự phát triển
+- Đừng sợ cấp trên hay đồng nghiệp cao cấp – giao tiếp chủ động rất có giá trị
+- Sáng kiến và giao tiếp rõ ràng phân biệt những người chuyên nghiệp giỏi với xuất sắc
 
-- **Shared Responsibility Model**: Từ EC2 → ECS → Fargate → Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria lựa chọn phù hợp
+**Lời khuyên phát triển chuyên môn:**
+- Vượt ra ngoài kiến thức sách giáo khoa
+- Tập trung vào tư duy giải quyết vấn đề thực tế
+- Học cách tích hợp nhiều dịch vụ cloud hiệu quả
+- Liên tục networking để tạo cơ hội
 
-#### Amazon Q Developer
+### Bài học rút ra
 
-- **SDLC automation**: Từ planning đến maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
+#### Hiểu biết kỹ thuật
+- Cloud computing không chỉ về công nghệ – mà còn về chuyển đổi kinh doanh
+- Hiểu cách kết hợp các dịch vụ cloud khác nhau quan trọng hơn việc biết từng dịch vụ riêng lẻ
+- Data engineer phải nối liền khoảng cách giữa khả năng kỹ thuật và nhu cầu kinh doanh
 
-### Những Gì Học Được
+#### Phát triển nghề nghiệp
+- Chứng chỉ mở cửa nhưng kỹ năng thực tế giữ cửa mở
+- Networking là con đường chính đến cơ hội tại các công ty công nghệ lớn
+- Học hỏi liên tục và cập nhật xu hướng cloud là điều cần thiết
 
-#### Tư Duy Thiết Kế
+#### Cách tiếp cận chuyên nghiệp
+- Giao tiếp chủ động và sáng kiến được đánh giá cao
+- Học từ thất bại là một phần của sự phát triển chuyên nghiệp
+- Hiểu biết kinh doanh quan trọng như chuyên môn kỹ thuật
+- "Stay hungry" – duy trì sự tò mò và động lực cải thiện
 
-- **Business-first approach**: Luôn bắt đầu từ business domain, không phải technology
-- **Ubiquitous language**: Importance của common vocabulary giữa business và tech teams
-- **Bounded contexts**: Cách identify và manage complexity trong large systems
+### Áp dụng vào công việc
 
-#### Kiến Trúc Kỹ Thuật
+**Ứng dụng ngay lập tức:**
+- Phát triển hiểu biết sâu hơn về bối cảnh kinh doanh cho các dự án kỹ thuật
+- Tập trung vào tích hợp nhiều dịch vụ AWS để giải quyết vấn đề thực tế
+- Xây dựng mạng lưới chuyên môn thông qua tham gia tích cực vào cộng đồng công nghệ
+- Thực hành đặt câu hỏi "Tại sao?" để hiểu nguyên nhân gốc rễ và yêu cầu
 
-- **Event storming technique**: Phương pháp thực tế để mô hình hóa quy trình kinh doanh
-- Sử dụng **Event-driven communication** thay vì synchronous calls
-- **Integration patterns**: Hiểu khi nào dùng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chọn từ VM → containers → serverless
+**Phát triển dài hạn:**
+- Theo đuổi các dự án cloud thực tế thể hiện kiến thức tích hợp dịch vụ
+- Phát triển kỹ năng mềm cùng với khả năng kỹ thuật
+- Xây dựng mối quan hệ trong cộng đồng cloud computing
+- Tập trung vào hiểu giá trị kinh doanh, không chỉ triển khai kỹ thuật
 
-#### Chiến Lược Hiện Đại Hóa
+### Trải nghiệm sự kiện
 
-- **Phased approach**: Không rush, phải có roadmap rõ ràng
-- **7Rs framework**: Nhiều con đường khác nhau tùy thuộc vào đặc điểm của mỗi ứng dụng
-- **ROI measurement**: Cost reduction + business agility
+Tham dự **"AWS: Enterprise Cloud Architectures and Industry Application"** mang lại những hiểu biết vô giá về cả khía cạnh kỹ thuật và chuyên môn của nghề nghiệp cloud computing.
 
-### Ứng Dụng Vào Công Việc
+#### Học hỏi từ các chuyên gia thực tế
 
-- **Áp dụng DDD** cho project hiện tại: Event storming sessions với business team
-- **Refactor microservices**: Sử dụng bounded contexts để identify service boundaries
-- **Implement event-driven patterns**: Thay thế một số sync calls bằng async messaging
-- **Serverless adoption**: Pilot AWS Lambda cho một số use cases phù hợp
-- **Try Amazon Q Developer**: Integrate vào development workflow để boost productivity
+- Nghe từ các chuyên gia có kinh nghiệm thực tế tại các công ty lớn (Siêu Việt Group, Heineken, ZaloPay) cung cấp góc nhìn về những thách thức thực tế
+- Hiểu rằng kỹ sư cloud cần kiến thức kinh doanh cùng với kỹ năng kỹ thuật là một điều mở mang tầm mắt
+- Sự nhấn mạnh vào tích hợp dịch vụ hơn là thành thạo từng dịch vụ riêng lẻ đã thay đổi cách tiếp cận học tập của tôi
 
-### Trải nghiệm trong event
+#### Hiểu biết về phát triển nghề nghiệp
 
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp tôi có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
+- Hiểu rằng 90-100% cơ hội đến từ networking nhấn mạnh tầm quan trọng của mối quan hệ chuyên môn
+- Hiểu vai trò của chứng chỉ (lọc CV) so với kỹ năng thực tế (công việc thực tế) giúp làm rõ ưu tiên học tập
+- Tư duy "stay hungry" vang vọng như một nguyên tắc cốt lõi cho thành công lâu dài
 
-#### Học hỏi từ các diễn giả có chuyên môn cao
-- Các diễn giả đến từ AWS và các tổ chức công nghệ lớn đã chia sẻ **best practices** trong thiết kế ứng dụng hiện đại.
-- Qua các case study thực tế, tôi hiểu rõ hơn cách áp dụng **Domain-Driven Design (DDD)** và **Event-Driven Architecture** vào các project lớn.
+#### Kiến thức thực tế
 
-#### Trải nghiệm kỹ thuật thực tế
-- Tham gia các phiên trình bày về **event storming** giúp tôi hình dung cách **mô hình hóa quy trình kinh doanh** thành các domain events.
-- Học cách **phân tách microservices** và xác định **bounded contexts** để quản lý sự phức tạp của hệ thống lớn.
-- Hiểu rõ trade-offs giữa **synchronous và asynchronous communication** cũng như các pattern tích hợp như **pub/sub, point-to-point, streaming**.
+- Phép so sánh đội bóng cho dịch vụ cloud giúp hiểu tầm quan trọng của việc phối hợp dịch vụ
+- Những câu chuyện về học từ thất bại chuẩn hóa những thách thức không thể tránh khỏi trong phát triển chuyên môn
+- Nhấn mạnh vào việc đặt câu hỏi "Tại sao?" cung cấp khung để học sâu hơn
 
-#### Ứng dụng công cụ hiện đại
-- Trực tiếp tìm hiểu về **Amazon Q Developer**, công cụ AI hỗ trợ SDLC từ lập kế hoạch đến maintenance.
-- Học cách **tự động hóa code transformation** và pilot serverless với **AWS Lambda**, từ đó nâng cao năng suất phát triển.
+#### Cộng đồng chuyên môn
 
-#### Kết nối và trao đổi
-- Workshop tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
-- Qua các ví dụ thực tế, tôi nhận ra tầm quan trọng của **business-first approach**, luôn bắt đầu từ nhu cầu kinh doanh thay vì chỉ tập trung vào công nghệ.
+- Networking với những người tham dự và diễn giả khác tạo cơ hội cho sự hợp tác trong tương lai
+- Thảo luận với đại diện AWS cung cấp hiểu biết về kỳ vọng của ngành
+- Kết nối với các chuyên gia data engineering mở ra khả năng được mentor
 
-#### Bài học rút ra
-- Việc áp dụng DDD và event-driven patterns giúp giảm **coupling**, tăng **scalability** và **resilience** cho hệ thống.
-- Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
-- Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
+#### Phát triển cá nhân
 
-#### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+- Có thêm tự tin rằng kỹ năng kỹ thuật kết hợp với hiểu biết kinh doanh tạo ra giá trị
+- Hiểu tầm quan trọng của giao tiếp chủ động và sáng kiến
+- Nhận ra rằng học tập liên tục và networking là hoạt động suốt đời trong sự nghiệp
+- Phát triển sự đánh giá cao về phạm vi kỹ năng cần thiết ngoài coding thuần túy
+
+#### Một số hình ảnh sự kiện
+*Thêm hình ảnh sự kiện của bạn tại đây*
+
+> Sự kiện này khẳng định rằng thành công trong cloud computing đòi hỏi sự kết hợp của kỹ năng kỹ thuật, hiểu biết kinh doanh, kỹ năng mềm và networking chuyên môn. Những hiểu biết từ các chuyên gia làm việc tại các công ty lớn cung cấp cái nhìn thực tế về những gì cần thiết để xây dựng một sự nghiệp thành công trong công nghệ cloud.
