@@ -445,7 +445,7 @@ Workshop mang lại nhiều kiến thức thực tiễn, giúp tôi hiểu rõ h
 
 
 ### Một số hình ảnh khi tham gia sự kiện
-https://www.facebook.com/permalink.php?story_fbid=pfbid069X7XhMQh9jBgpE3inJqUtCM8ZAVV8y4N45Zh61foHBs5sjgPabkt79ZGuVpio9Ul&id=61585437977498&rdid=PO6Awn4nnoIDqKOB#
+![Event Photo 1](images/photo_01.jpg)
 
 
 ---
