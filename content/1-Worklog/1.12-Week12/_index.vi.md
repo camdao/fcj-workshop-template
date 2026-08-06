@@ -1,58 +1,93 @@
 ---
 title: "Worklog Tuần 12"
 date: 2024-01-01
-weight: 2
+weight: 12
 chapter: false
-pre: " <b> 1.12 </b> "
+pre: " <b> 1.12. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
 ### Mục tiêu tuần 12:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Hoàn thành capstone project tích hợp các khái niệm đã học.
+* Ôn tập và củng cố kiến thức AWS.
+* Chuẩn bị các deliverable cuối cùng của internship.
+* Phản ánh về hành trình học tập và lập kế hoạch bước tiếp theo.
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Lập kế hoạch Capstone Project: <br>&emsp; + Định nghĩa project scope <br>&emsp; + Thiết kế kiến trúc <br>&emsp; + Tạo implementation plan <br>&emsp; + Thiết lập project repository      | 27/08/2026   | 27/08/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 3   | - Triển khai Project: <br>&emsp; + Xây dựng infrastructure với IaC <br>&emsp; + Deploy application components <br>&emsp; + Cấu hình security và monitoring <br>&emsp; + Test functionality | 28/08/2026   | 28/08/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 4   | - Hoàn thành Project: <br>&emsp; + Finalize implementation <br>&emsp; + Tài liệu hóa architecture <br>&emsp; + Tạo user guides <br>&emsp; + Chuẩn bị presentation                         | 29/08/2026   | 29/08/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 5   | - Ôn tập kiến thức: <br>&emsp; + Review tất cả topics đã học <br>&emsp; + Thực hành với sample scenarios <br>&emsp; + Xác định knowledge gaps <br>&emsp; + Học advanced topics           | 30/08/2026   | 30/08/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 6   | - Kết thúc Internship: <br>&emsp; + Hoàn thành internship report <br>&emsp; + Present capstone project <br>&emsp; + Nhận feedback <br>&emsp; + Lập kế hoạch continuous learning           | 31/08/2026   | 31/08/2026      | <https://cloudjourney.awsstudygroup.com/> |
 
 
 ### Kết quả đạt được tuần 12:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Thành công hoàn thành capstone project:
+  * Thiết kế và triển khai multi-tier application trên AWS
+  * Áp dụng nguyên tắc Infrastructure as Code
+  * Tích hợp nhiều dịch vụ AWS
+  * Trình diễn security và operational best practices
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Xây dựng giải pháp toàn diện bao gồm:
+  * VPC với public và private subnets
+  * Auto Scaling groups với load balancing
+  * RDS database với Multi-AZ deployment
+  * S3 cho static content và backups
+  * CloudFront cho content delivery
+  * CloudWatch cho monitoring và alerting
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Triển khai security best practices:
+  * IAM roles và policies
+  * Encryption at rest và in transit
+  * Network segmentation
+  * Security group configurations
+  * CloudTrail cho auditing
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Tạo tài liệu toàn diện:
+  * Architecture diagrams
+  * Deployment procedures
+  * Operational runbooks
+  * Troubleshooting guides
+  * Cost optimization recommendations
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Ôn tập kết quả học tập trong internship:
+  * Nắm vững các dịch vụ AWS core
+  * Có kinh nghiệm thực tế với 50+ dịch vụ AWS
+  * Phát triển kỹ năng cloud architecture
+  * Học tự động hóa infrastructure
+  * Hiểu về security và compliance
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+* Các năng lực chính đã phát triển:
+  * **Compute:** EC2, Lambda, ECS/Fargate, Auto Scaling
+  * **Storage:** S3, EBS, EFS, Storage Gateway
+  * **Database:** RDS, DynamoDB, Aurora
+  * **Networking:** VPC, Route 53, CloudFront, API Gateway
+  * **Security:** IAM, KMS, WAF, GuardDuty, Security Hub
+  * **Management:** CloudFormation, CloudWatch, CloudTrail, Systems Manager
+  * **Developer Tools:** CodeCommit, CodeBuild, CodeDeploy, CodePipeline
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+* Đạt được sự phát triển chuyên môn:
+  * Problem-solving và analytical thinking
+  * System design và architecture
+  * Documentation và communication
+  * Team collaboration
+  * Time management và self-learning
 
+* Chuẩn bị cho sự nghiệp tương lai:
+  * Xác định các lĩnh vực cần học tiếp
+  * Lập kế hoạch AWS certification path
+  * Xây dựng portfolio của các projects
+  * Networking với cloud professionals
+  * Đặt mục tiêu phát triển sự nghiệp
 
+* Phản ánh về trải nghiệm internship:
+  * Vượt qua challenges và học từ mistakes
+  * Đánh giá cao mentorship và guidance
+  * Nhận ra sự tăng trưởng về technical và soft skills
+  * Biết ơn về cơ hội học tập hands-on
+  * Hào hứng cho tương lai trong cloud computing
+
+* Thành công chuyển đổi từ intern sang cloud practitioner với nền tảng vững chắc về AWS services, architecture patterns và best practices, sẵn sàng đóng góp cho các cloud projects và tiếp tục phát triển chuyên môn.

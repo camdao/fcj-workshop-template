@@ -1,59 +1,82 @@
 ---
 title: "Worklog Tuần 7"
 date: 2024-01-01
-weight: 1
+weight: 7
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 7:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Nắm vững AWS CloudFormation cho Infrastructure as Code.
+* Hiểu về cấu trúc template và quản lý tài nguyên.
+* Tìm hiểu về stack operations và change sets.
+* Thực hành tự động hóa triển khai infrastructure.
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Tìm hiểu CloudFormation Fundamentals: <br>&emsp; + Các khái niệm Infrastructure as Code <br>&emsp; + Cấu trúc template (YAML/JSON) <br>&emsp; + Resources, parameters, outputs <br>&emsp; + Intrinsic functions | 23/07/2026   | 23/07/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 3   | - Tìm hiểu Stack Management: <br>&emsp; + Tạo và cập nhật stacks <br>&emsp; + Change sets <br>&emsp; + Stack policies <br>&emsp; + Drift detection                                        | 24/07/2026   | 24/07/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 4   | - **Thực hành:** <br>&emsp; + Viết CloudFormation templates <br>&emsp; + Tạo stacks từ templates <br>&emsp; + Sử dụng parameters và mappings <br>&emsp; + Cấu hình outputs                 | 25/07/2026   | 25/07/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 5   | - Tìm hiểu Advanced Features: <br>&emsp; + Nested stacks <br>&emsp; + Cross-stack references <br>&emsp; + Custom resources <br>&emsp; + StackSets cho multi-account/region                | 26/07/2026   | 26/07/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 6   | - **Thực hành:** <br>&emsp; + Tạo nested stacks <br>&emsp; + Triển khai cross-stack references <br>&emsp; + Sử dụng change sets <br>&emsp; + Deploy ứng dụng multi-tier                   | 27/07/2026   | 27/07/2026      | <https://cloudjourney.awsstudygroup.com/> |
 
 
 ### Kết quả đạt được tuần 7:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Nắm vững các khái niệm Infrastructure as Code:
+  * Hiểu lợi ích của IaC (version control, repeatability, automation)
+  * CloudFormation vs. các IaC tools khác
+  * Phương pháp declarative vs. imperative
+  * Quản lý infrastructure theo template
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Tìm hiểu cấu trúc CloudFormation template:
+  * Cú pháp YAML và JSON
+  * Các phần của template (Parameters, Resources, Outputs, Mappings, Conditions)
+  * Khai báo resource và properties
+  * Intrinsic functions (Ref, GetAtt, Sub, Join, Select)
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Thành công trong việc tạo CloudFormation templates:
+  * Viết templates cho VPC, subnets và security groups
+  * Tạo templates cho EC2 instances với user data
+  * Định nghĩa S3 buckets, IAM roles và policies
+  * Sử dụng parameters cho templates tái sử dụng
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Hiểu về stack operations:
+  * Tạo stacks từ templates
+  * Cập nhật stacks với change sets
+  * Rolling back các updates thất bại
+  * Xóa stacks và dọn dẹp resources
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Tìm hiểu về change management:
+  * Change sets để preview updates
+  * Stack policies để bảo vệ resources
+  * Drift detection cho configuration compliance
+  * Update behaviors (No Interrupt, Some Interrupt, Replacement)
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+* Nắm vững các tính năng CloudFormation:
+  * Conditions cho conditional resource creation
+  * Mappings cho environment-specific values
+  * Outputs để export values
+  * DependsOn cho explicit resource dependencies
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+* Thành công trong việc triển khai advanced patterns:
+  * Nested stacks cho modular templates
+  * Cross-stack references với exports/imports
+  * Custom resources với Lambda
+  * Stack termination protection
 
+* Có kinh nghiệm thực tế với:
+  * Version controlling CloudFormation templates
+  * Tự động hóa infrastructure deployment
+  * Quản lý nhiều environments (dev, staging, prod)
+  * Troubleshooting stack creation failures
 
+* Hiểu các best practices về CloudFormation:
+  * Tổ chức templates để tái sử dụng
+  * Parameter validation và constraints
+  * Sử dụng AWS Systems Manager Parameter Store
+  * Ước tính chi phí trước khi deploy
+
+* Xây dựng kiến thức nền tảng cho các khái niệm IaC nâng cao, tích hợp CI/CD và multi-account/multi-region deployments với StackSets.

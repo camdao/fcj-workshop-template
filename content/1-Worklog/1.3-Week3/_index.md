@@ -1,57 +1,70 @@
 ---
 title: "Week 3 Worklog"
 date: 2024-01-01
-weight: 1
+weight: 3
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 3 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Master VPC (Virtual Private Cloud) fundamentals and networking concepts.
+* Understand subnets, route tables, and internet gateways.
+* Learn about Network ACLs and VPC security.
+* Practice building secure network architectures.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Learn VPC Fundamentals: <br>&emsp; + VPC concepts and components <br>&emsp; + CIDR blocks and IP addressing <br>&emsp; + Default vs. Custom VPC <br>&emsp; + VPC limits and quotas                 | 06/25/2026 | 06/25/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 3   | - Learn Subnets & Route Tables: <br>&emsp; + Public vs. Private subnets <br>&emsp; + Route table configuration <br>&emsp; + Internet Gateway (IGW) <br>&emsp; + NAT Gateway vs. NAT Instance         | 06/26/2026 | 06/26/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 4   | - **Practice:** <br>&emsp; + Create custom VPC <br>&emsp; + Configure subnets across AZs <br>&emsp; + Set up route tables <br>&emsp; + Attach Internet Gateway                                        | 06/27/2026 | 06/27/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 5   | - Learn VPC Security: <br>&emsp; + Network ACLs (NACLs) <br>&emsp; + Security Groups vs. NACLs <br>&emsp; + VPC Flow Logs <br>&emsp; + Best practices for network security                           | 06/28/2026 | 06/28/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 6   | - **Practice:** <br>&emsp; + Configure Network ACLs <br>&emsp; + Set up VPC Flow Logs <br>&emsp; + Deploy multi-tier architecture <br>&emsp; + Test connectivity and security                        | 06/29/2026 | 06/29/2026      | <https://cloudjourney.awsstudygroup.com/> |
 
 
 ### Week 3 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Mastered VPC fundamentals:
+  * Understanding VPC concepts and architecture
+  * CIDR block planning and IP address management
+  * VPC components and their relationships
+  * Differences between Default and Custom VPC
 
-* Successfully created and configured an AWS Free Tier account.
+* Learned about subnets and availability zones:
+  * Public subnet configuration for internet-facing resources
+  * Private subnet configuration for backend resources
+  * Multi-AZ deployment for high availability
+  * Subnet sizing and address allocation
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Understood routing concepts:
+  * Route table creation and association
+  * Internet Gateway (IGW) for internet connectivity
+  * NAT Gateway for private subnet internet access
+  * Route table priorities and route evaluation
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Mastered VPC security mechanisms:
+  * Network ACLs (stateless firewall)
+  * Comparison between Security Groups and NACLs
+  * Inbound and outbound rules configuration
+  * Defense in depth strategy
 
-* Used AWS CLI to perform basic operations such as:
+* Successfully created and configured custom VPC:
+  * Designed VPC with proper CIDR blocks
+  * Created public and private subnets across multiple AZs
+  * Configured route tables for different subnet types
+  * Attached and configured Internet Gateway
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+* Implemented VPC security best practices:
+  * Configured Network ACLs for subnet-level security
+  * Set up VPC Flow Logs for monitoring
+  * Implemented least privilege access
+  * Documented network architecture
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Gained practical experience with:
+  * Multi-tier architecture design (web, app, database tiers)
+  * Testing connectivity between subnets
+  * Troubleshooting network issues
+  * VPC peering concepts
+
+* Built foundational knowledge for advanced networking topics like VPC Peering, Transit Gateway, and PrivateLink.

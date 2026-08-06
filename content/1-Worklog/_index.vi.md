@@ -6,35 +6,28 @@ chapter: false
 pre: " <b> 1. </b> "
 ---
 
-<!-- {{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}} -->
+Ghi lại nhật ký công việc hằng tuần trong quá trình thực tập tại First Cloud Journey - AWS Study Group (22/06/2026 - 15/08/2026).
 
-**Trong trang này** bạn sẽ cần giới thiệu worklog của bạn **như thế nào**? Bạn hoàn thành chương trình trong vòng **bao nhiêu tuần**? Bạn **đã làm gì** trong các tuần đó?
+**Tuần 1:** [Làm quen với AWS và các dịch vụ AWS cơ bản - AWS Budgets & IAM](1.1-week1/)
 
+**Tuần 2:** [Compute Essentials với Amazon EC2 & IAM Roles cho EC2](1.2-week2/)
 
-Thông thường và cũng là tiêu chuẩn, một worklog được thực hiện trong khoảng 3 tháng (trong suốt thời gian thực tập) với nội dung các tuần như sau:
+**Tuần 3:** [VPC & Networking Fundamentals](1.3-week3/)
 
-**Tuần 1:** [Làm quen với AWS và các dịch vụ cơ bản - AWS Budgets & IAM](1.1-week1/)
+**Tuần 4:** [Amazon S3 & Storage Services](1.4-week4/)
 
-**Tuần 2:** [Kiến thức cơ bản về Compute với Amazon EC2 & IAM Roles cho EC2](1.2-week2/)
+**Tuần 5:** [Database Services - RDS & DynamoDB](1.5-week5/)
 
-**Tuần 3:** [Làm công việc B...](1.3-week3/)
+**Tuần 6:** [Load Balancing & Auto Scaling](1.6-week6/)
 
-**Tuần 4:** [Làm công việc C...](1.4-week4/)
+**Tuần 7:** [CloudFormation & Infrastructure as Code](1.7-week7/)
 
-**Tuần 5:** [Làm công việc D...](1.5-week5/)
+**Tuần 8:** [CloudWatch & CloudTrail Monitoring](1.8-week8/)
 
-**Tuần 6:** [Làm công việc E...](1.6-week6/)
+**Tuần 9:** [Lambda & Serverless Architecture](1.9-week9/)
 
-**Tuần 7:** [Làm công việc G...](1.7-week7/)
+**Tuần 10:** [Container Services - ECS & ECR](1.10-week10/)
 
-**Tuần 8:** [Làm công việc H...](1.8-week8/)
+**Tuần 11:** [AWS Security & Best Practices](1.11-week11/)
 
-**Tuần 9:** [Làm công việc I...](1.9-week9/)
-
-**Tuần 10:** [Làm công việc L...](1.10-week10/)
-
-**Tuần 11:** [Làm công việc M...](1.11-week11/)
-
-**Tuần 12:** [Làm công việc N...](1.12-week12/)
+**Tuần 12:** [Capstone Project & Internship Review](1.12-week12/)

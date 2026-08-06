@@ -1,59 +1,88 @@
 ---
 title: "Worklog Tuần 11"
 date: 2024-01-01
-weight: 2
+weight: 11
 chapter: false
 pre: " <b> 1.11. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 11:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Nắm vững các dịch vụ bảo mật AWS và best practices.
+* Hiểu về encryption, secrets management và compliance.
+* Tìm hiểu các công cụ và frameworks về security của AWS.
+* Thực hành triển khai giải pháp bảo mật toàn diện.
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Tìm hiểu Security Fundamentals: <br>&emsp; + Shared responsibility model <br>&emsp; + AWS security services overview <br>&emsp; + Security best practices <br>&emsp; + Compliance frameworks | 20/08/2026   | 20/08/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 3   | - Tìm hiểu AWS KMS & Secrets Manager: <br>&emsp; + Encryption at rest và in transit <br>&emsp; + KMS keys và policies <br>&emsp; + Secrets rotation <br>&emsp; + AWS Certificate Manager  | 21/08/2026   | 21/08/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 4   | - **Thực hành:** <br>&emsp; + Tạo KMS keys <br>&emsp; + Encrypt data với KMS <br>&emsp; + Lưu secrets trong Secrets Manager <br>&emsp; + Triển khai secret rotation                       | 22/08/2026   | 22/08/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 5   | - Tìm hiểu Security Tools: <br>&emsp; + AWS WAF cho application protection <br>&emsp; + AWS Shield cho DDoS protection <br>&emsp; + GuardDuty cho threat detection <br>&emsp; + Security Hub | 23/08/2026   | 23/08/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 6   | - **Thực hành:** <br>&emsp; + Cấu hình AWS WAF rules <br>&emsp; + Bật GuardDuty <br>&emsp; + Review Security Hub findings <br>&emsp; + Triển khai security best practices                 | 24/08/2026   | 24/08/2026      | <https://cloudjourney.awsstudygroup.com/> |
 
 
 ### Kết quả đạt được tuần 11:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Nắm vững kiến thức cơ bản về AWS security:
+  * Hiểu shared responsibility model
+  * Landscape của các dịch vụ security AWS
+  * Nguyên tắc thiết kế security
+  * Yêu cầu compliance và regulatory
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Tìm hiểu về encryption và key management:
+  * AWS KMS cho encryption key management
+  * Customer Master Keys (CMKs)
+  * Key policies và grants
+  * Envelope encryption
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Thành công triển khai encryption:
+  * Tạo và quản lý KMS keys
+  * Mã hóa data at rest (EBS, S3, RDS)
+  * Cấu hình encryption in transit (TLS/SSL)
+  * Tự động key rotation
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Nắm vững secrets management:
+  * Các khái niệm AWS Secrets Manager
+  * Lưu trữ database credentials
+  * Quản lý API keys và tokens
+  * Automatic secret rotation
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Tìm hiểu các dịch vụ security AWS:
+  * AWS WAF cho web application firewall
+  * AWS Shield cho DDoS protection
+  * Amazon GuardDuty cho threat detection
+  * AWS Security Hub cho centralized security
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+* Thành công cấu hình security tools:
+  * Tạo WAF rules và web ACLs
+  * Bật GuardDuty cho threat monitoring
+  * Cấu hình Security Hub standards
+  * Thiết lập automated remediation
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+* Hiểu các best practices về IAM security:
+  * Nguyên tắc least privilege
+  * MFA cho privileged accounts
+  * IAM Access Analyzer
+  * Service control policies (SCPs)
 
+* Tìm hiểu về network security:
+  * Best practices cho VPC security groups
+  * Cấu hình Network ACLs
+  * AWS Network Firewall
+  * Phân tích VPC Flow Logs
 
+* Có kinh nghiệm thực tế với:
+  * Security incident response
+  * Compliance auditing
+  * Security automation
+  * Vulnerability management
+
+* Hiểu các compliance frameworks:
+  * AWS Artifact cho compliance reports
+  * Cân nhắc GDPR, HIPAA, PCI DSS
+  * AWS Config cho compliance monitoring
+  * AWS Audit Manager
+
+* Xây dựng kiến thức nền tảng cho việc triển khai defense-in-depth security, đáp ứng yêu cầu compliance và duy trì môi trường AWS an toàn.

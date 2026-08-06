@@ -1,57 +1,90 @@
 ---
 title: "Week 5 Worklog"
 date: 2024-01-01
-weight: 1
+weight: 5
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 5 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Master AWS database services (RDS and DynamoDB).
+* Understand relational vs. NoSQL database concepts.
+* Learn database backup, restore, and high availability.
+* Practice deploying and managing databases on AWS.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Learn RDS Fundamentals: <br>&emsp; + RDS concepts and architecture <br>&emsp; + Supported database engines <br>&emsp; + RDS instance types <br>&emsp; + Multi-AZ deployments                        | 07/09/2026 | 07/09/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 3   | - Learn RDS Operations: <br>&emsp; + Automated backups <br>&emsp; + Database snapshots <br>&emsp; + Read replicas <br>&emsp; + Parameter groups and option groups                                     | 07/10/2026 | 07/10/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 4   | - **Practice:** <br>&emsp; + Launch RDS instances <br>&emsp; + Configure Multi-AZ <br>&emsp; + Create read replicas <br>&emsp; + Perform backup and restore                                           | 07/11/2026 | 07/11/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 5   | - Learn DynamoDB Fundamentals: <br>&emsp; + NoSQL concepts <br>&emsp; + Tables, items, and attributes <br>&emsp; + Primary keys and indexes <br>&emsp; + Capacity modes (On-Demand vs. Provisioned)   | 07/12/2026 | 07/12/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 6   | - **Practice:** <br>&emsp; + Create DynamoDB tables <br>&emsp; + Perform CRUD operations <br>&emsp; + Configure GSI and LSI <br>&emsp; + Set up DynamoDB Streams                                      | 07/13/2026 | 07/13/2026      | <https://cloudjourney.awsstudygroup.com/> |
 
 
 ### Week 5 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Mastered Amazon RDS fundamentals:
+  * Understanding managed relational database service
+  * Supported engines (MySQL, PostgreSQL, MariaDB, Oracle, SQL Server, Aurora)
+  * RDS instance classes and storage types
+  * Multi-AZ deployments for high availability
 
-* Successfully created and configured an AWS Free Tier account.
+* Learned RDS operational tasks:
+  * Automated backup and retention policies
+  * Manual snapshots and restoration
+  * Read replicas for read scaling
+  * Parameter groups for database configuration
+  * Option groups for additional features
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Successfully deployed and managed RDS instances:
+  * Launched RDS instances with appropriate configurations
+  * Configured Multi-AZ for automatic failover
+  * Created read replicas across regions
+  * Performed backup and restore operations
+  * Monitored database performance
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Understood RDS security:
+  * VPC security groups for network access control
+  * IAM database authentication
+  * Encryption at rest and in transit
+  * Enhanced monitoring and Performance Insights
 
-* Used AWS CLI to perform basic operations such as:
+* Mastered DynamoDB fundamentals:
+  * NoSQL database concepts and use cases
+  * DynamoDB architecture and data model
+  * Tables, items, attributes, and data types
+  * Primary keys (partition key and sort key)
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+* Learned DynamoDB indexing:
+  * Global Secondary Indexes (GSI)
+  * Local Secondary Indexes (LSI)
+  * Index design best practices
+  * Query vs. Scan operations
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Successfully created and managed DynamoDB tables:
+  * Created tables with proper key design
+  * Performed CRUD operations via Console and CLI
+  * Configured secondary indexes
+  * Set up DynamoDB Streams for change capture
+
+* Understood DynamoDB capacity modes:
+  * On-Demand capacity for unpredictable workloads
+  * Provisioned capacity with auto-scaling
+  * Cost optimization strategies
+  * Read and write capacity units (RCU/WCU)
+
+* Learned DynamoDB advanced features:
+  * DynamoDB Streams for event-driven architectures
+  * Global Tables for multi-region replication
+  * Point-in-time recovery (PITR)
+  * Time to Live (TTL) for automatic data expiration
+
+* Gained practical experience with:
+  * Choosing between RDS and DynamoDB
+  * Database migration strategies
+  * Performance tuning and monitoring
+  * Backup and disaster recovery planning
+
+* Built foundational knowledge for database best practices, cost optimization, and integration with application architectures.
