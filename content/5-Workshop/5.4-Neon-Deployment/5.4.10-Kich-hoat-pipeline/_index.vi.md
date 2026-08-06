@@ -20,6 +20,6 @@ git merge develop
 git push origin main
 ```
 
-![Hình 10. Trigger pipeline](/images/5-Workshop/5.4-neon-deployment/placeholder-trigger-pipeline.png)
+![Hình 10. Trigger pipeline](/5-Workshop/images/5.4-neon-deployment/placeholder-trigger-pipeline.png)
 
 

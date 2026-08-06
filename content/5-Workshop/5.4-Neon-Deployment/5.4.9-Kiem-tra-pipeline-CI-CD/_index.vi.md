@@ -23,5 +23,5 @@ Pipeline chính gồm 6 job theo thứ tự:
 - Push vào `develop` hoặc `feature/**` → chạy các job test cơ bản
 - Pull request về `main` → chạy các job test cơ bản
 
-![Hình 9. Pipeline CI/CD](/images/5-Workshop/5.4-neon-deployment/placeholder-pipeline.png)
+![Hình 9. Pipeline CI/CD](/5-Workshop/images/5.4-neon-deployment/placeholder-pipeline.png)
 

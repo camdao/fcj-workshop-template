@@ -19,7 +19,7 @@ Mở CloudFront Console → Distributions và chọn Create distribution, sau đ
 
 **Domain (Route 53 managed domain – optional):** Để trống vì dự án dùng URL mặc định `*.cloudfront.net` do AWS cấp.
 
-![image011.png](/images/5-Workshop/5.5-Neon-Operations/image011.png)
+![image011.png](/5-Workshop/images/5.5-Neon-Operations/image011.png)
 
 ### Cấu hình S3 Origin và OAC
 
@@ -35,14 +35,14 @@ Mở CloudFront Console → Distributions và chọn Create distribution, sau đ
 
 **Cache settings:** Giữ tùy chọn **Use recommended cache settings tailored to serving S3 content**.
 
-![image013.png](/images/5-Workshop/5.5-Neon-Operations/image013.png)
+![image013.png](/5-Workshop/images/5.5-Neon-Operations/image013.png)
 
 ### Điều chỉnh ALB Origin
 
 Sau khi khởi tạo, vào **Distributions**, chọn distribution vừa tạo, mở tab **Origins** và chỉnh sửa origin Elastic Load Balancing đã liên kết. Đặt *Protocol* là **HTTP only** để phù hợp với ALB/API hiện tại, tránh lỗi giao tiếp hoặc phản hồi `400 Bad Request` do không khớp giao thức.
 
-![image015.png](/images/5-Workshop/5.5-Neon-Operations/image015.png)
+![image015.png](/5-Workshop/images/5.5-Neon-Operations/image015.png)
 
 Đợi distribution có trạng thái **Enabled** và cập nhật hoàn tất, sau đó mở URL triển khai thực tế.
 
-![image017.png](/images/5-Workshop/5.5-Neon-Operations/image017.png)
+![image017.png](/5-Workshop/images/5.5-Neon-Operations/image017.png)

@@ -22,5 +22,5 @@ pre : " <b> 5.4.12. </b> "
    - Chọn target group tương ứng
 6. Lưu lại.
 
-![Hình 15. Kết nối ECS Service với ALB](/images/5-Workshop/5.4-neon-deployment/placeholder-ecs-alb-attach.png)
+![Hình 15. Kết nối ECS Service với ALB](/5-Workshop/images/5.4-neon-deployment/placeholder-ecs-alb-attach.png)
 

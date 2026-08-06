@@ -36,9 +36,9 @@ Sau khi hoàn thành phần này, hệ thống sẽ được xác nhận:
 - TH2: Điền sai thông tin, form báo lỗi validation.
 - TH3: Đăng nhập thất bại do mật khẩu không chính xác.
 
-![Hình 1. Màn hình đăng ký](/images/5-Workshop/5.5-Neon-Operations/image018.png)
+![Hình 1. Màn hình đăng ký](/5-Workshop/images/5.5-Neon-Operations/image018.png)
 
-![Hình 2. Màn hình đăng nhập](/images/5-Workshop/5.5-Neon-Operations/image020.png)
+![Hình 2. Màn hình đăng nhập](/5-Workshop/images/5.5-Neon-Operations/image020.png)
 
 ---
 
@@ -58,7 +58,7 @@ Sau khi hoàn thành phần này, hệ thống sẽ được xác nhận:
 **Trường hợp ngoại lệ:**
 - TH1: Mất địa điểm khi reload trang (hiếm gặp, do cache chưa load kịp).
 
-![Hình 3. Màn hình trang chính với danh sách POI](/images/5-Workshop/5.5-Neon-Operations/image022.png)
+![Hình 3. Màn hình trang chính với danh sách POI](/5-Workshop/images/5.5-Neon-Operations/image022.png)
 
 ---
 
@@ -79,8 +79,8 @@ Sau khi hoàn thành phần này, hệ thống sẽ được xác nhận:
 - TH1: Tệp đứng hình trong khoảng thời gian ngắn khi hệ thống đang generate TTS (trường hợp tệp âm thanh gốc bị xóa).
 - TH2: Phát nhầm giọng đọc cho ngôn ngữ (đã được fix).
 
-![Hình 4. Màn hình POI đang phát thuyết minh](/images/5-Workshop/5.5-Neon-Operations/image024.png)
-![Hình 5. Màn hình POI đang dừng thuyết minh](/images/5-Workshop/5.5-Neon-Operations/image026.png)
+![Hình 4. Màn hình POI đang phát thuyết minh](/5-Workshop/images/5.5-Neon-Operations/image024.png)
+![Hình 5. Màn hình POI đang dừng thuyết minh](/5-Workshop/images/5.5-Neon-Operations/image026.png)
 
 ---
 
@@ -101,11 +101,11 @@ Sau khi hoàn thành phần này, hệ thống sẽ được xác nhận:
 **Trường hợp ngoại lệ:**
 - TH1: Không thể bắt đầu tour do chưa mở khóa các Tour Premium.
 
-![Hình 6. Màn hình Tour Premium chưa mở khóa](/images/5-Workshop/5.5-Neon-Operations/image028.png)
+![Hình 6. Màn hình Tour Premium chưa mở khóa](/5-Workshop/images/5.5-Neon-Operations/image028.png)
 
-![Hình 7. Màn hình Tour Premium miễn phí](/images/5-Workshop/5.5-Neon-Operations/image030.png)
+![Hình 7. Màn hình Tour Premium miễn phí](/5-Workshop/images/5.5-Neon-Operations/image030.png)
 
-![Hình 8. Màn hình Tour đang thuyết minh](/images/5-Workshop/5.5-Neon-Operations/image032.png)
+![Hình 8. Màn hình Tour đang thuyết minh](/5-Workshop/images/5.5-Neon-Operations/image032.png)
 
 ---
 
@@ -129,13 +129,13 @@ Sau khi hoàn thành phần này, hệ thống sẽ được xác nhận:
 - TH3: Không thể thanh toán do không đủ số dư.
 - TH4: Không thể thanh toán do thiết bị đang offline.
 
-![Hình 9. Màn hình khi mở thanh toán](/images/5-Workshop/5.5-Neon-Operations/image034.png)
+![Hình 9. Màn hình khi mở thanh toán](/5-Workshop/images/5.5-Neon-Operations/image034.png)
 
-![Hình 10. Màn hình khi chọn thanh toán bằng Paypal](/images/5-Workshop/5.5-Neon-Operations/image036.png)
+![Hình 10. Màn hình khi chọn thanh toán bằng Paypal](/5-Workshop/images/5.5-Neon-Operations/image036.png)
 
-![Hình 11. Màn hình khi chọn thanh toán bằng thẻ](/images/5-Workshop/5.5-Neon-Operations/image038.png)
+![Hình 11. Màn hình khi chọn thanh toán bằng thẻ](/5-Workshop/images/5.5-Neon-Operations/image038.png)
 
-![Hình 12. Màn hình khi thanh toán thành công](/images/5-Workshop/5.5-Neon-Operations/image040.png)
+![Hình 12. Màn hình khi thanh toán thành công](/5-Workshop/images/5.5-Neon-Operations/image040.png)
 
 ---
 
@@ -166,8 +166,8 @@ Sau khi hoàn thành phần này, hệ thống sẽ được xác nhận:
 1. Dùng **Developer Tools** trên trình duyệt (hoặc thiết bị thực tế) để giả lập các kích thước màn hình.
 2. Kiểm tra UI, UX trên cả mobile và desktop.
 
-![Hình 13. Giao diện trên điện thoại](/images/5-Workshop/5.5-Neon-Operations/image042.png)
-![Hình 14. Giao diện trên máy tính](/images/5-Workshop/5.5-Neon-Operations/image044.png)
+![Hình 13. Giao diện trên điện thoại](/5-Workshop/images/5.5-Neon-Operations/image042.png)
+![Hình 14. Giao diện trên máy tính](/5-Workshop/images/5.5-Neon-Operations/image044.png)
 
 ---
 

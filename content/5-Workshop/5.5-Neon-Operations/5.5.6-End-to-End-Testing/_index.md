@@ -36,9 +36,9 @@ After completing this section, the system will be verified to ensure:
 - Case 2: Incorrect information filled in — form shows validation error.
 - Case 3: Login fails due to incorrect password.
 
-![Figure 1. Registration screen](/images/5-Workshop/5.5-Neon-Operations/image018.png)
+![Figure 1. Registration screen](/5-Workshop/images/5.5-Neon-Operations/image018.png)
 
-![Figure 2. Login screen](/images/5-Workshop/5.5-Neon-Operations/image020.png)
+![Figure 2. Login screen](/5-Workshop/images/5.5-Neon-Operations/image020.png)
 
 ---
 
@@ -58,7 +58,7 @@ After completing this section, the system will be verified to ensure:
 **Edge cases:**
 - Case 1: POI disappears on page reload (rare — caused by cache not loading in time).
 
-![Figure 3. Home screen with POI list](/images/5-Workshop/5.5-Neon-Operations/image022.png)
+![Figure 3. Home screen with POI list](/5-Workshop/images/5.5-Neon-Operations/image022.png)
 
 ---
 
@@ -79,8 +79,8 @@ After completing this section, the system will be verified to ensure:
 - Case 1: File briefly freezes while the system is generating TTS (happens when the original audio file is deleted).
 - Case 2: Wrong voice language served for a POI (already fixed).
 
-![Figure 4. POI screen — audio playing](/images/5-Workshop/5.5-Neon-Operations/image024.png)
-![Figure 5. POI screen — audio paused](/images/5-Workshop/5.5-Neon-Operations/image026.png)
+![Figure 4. POI screen — audio playing](/5-Workshop/images/5.5-Neon-Operations/image024.png)
+![Figure 5. POI screen — audio paused](/5-Workshop/images/5.5-Neon-Operations/image026.png)
 
 ---
 
@@ -101,11 +101,11 @@ After completing this section, the system will be verified to ensure:
 **Edge cases:**
 - Case 1: Cannot start the tour because Premium Tours have not been unlocked.
 
-![Figure 6. Locked Premium Tour screen](/images/5-Workshop/5.5-Neon-Operations/image028.png)
+![Figure 6. Locked Premium Tour screen](/5-Workshop/images/5.5-Neon-Operations/image028.png)
 
-![Figure 7. Free Premium Tour screen](/images/5-Workshop/5.5-Neon-Operations/image030.png)
+![Figure 7. Free Premium Tour screen](/5-Workshop/images/5.5-Neon-Operations/image030.png)
 
-![Figure 8. Tour screen — commentary playing](/images/5-Workshop/5.5-Neon-Operations/image032.png)
+![Figure 8. Tour screen — commentary playing](/5-Workshop/images/5.5-Neon-Operations/image032.png)
 
 ---
 
@@ -129,13 +129,13 @@ After completing this section, the system will be verified to ensure:
 - Case 3: Payment fails due to insufficient balance.
 - Case 4: Payment fails because the device is offline.
 
-![Figure 9. Payment screen — checkout opened](/images/5-Workshop/5.5-Neon-Operations/image034.png)
+![Figure 9. Payment screen — checkout opened](/5-Workshop/images/5.5-Neon-Operations/image034.png)
 
-![Figure 10. Payment screen — PayPal selected](/images/5-Workshop/5.5-Neon-Operations/image036.png)
+![Figure 10. Payment screen — PayPal selected](/5-Workshop/images/5.5-Neon-Operations/image036.png)
 
-![Figure 11. Payment screen — card selected](/images/5-Workshop/5.5-Neon-Operations/image038.png)
+![Figure 11. Payment screen — card selected](/5-Workshop/images/5.5-Neon-Operations/image038.png)
 
-![Figure 12. Payment screen — payment successful](/images/5-Workshop/5.5-Neon-Operations/image040.png)
+![Figure 12. Payment screen — payment successful](/5-Workshop/images/5.5-Neon-Operations/image040.png)
 
 ---
 
@@ -166,8 +166,8 @@ After completing this section, the system will be verified to ensure:
 1. Use **Developer Tools** in the browser (or a physical device) to simulate various mobile screen sizes.
 2. Verify UI and UX on both mobile and desktop viewports.
 
-![Figure 13. Mobile interface](/images/5-Workshop/5.5-Neon-Operations/image042.png)
-![Figure 14. Desktop interface](/images/5-Workshop/5.5-Neon-Operations/image044.png)
+![Figure 13. Mobile interface](/5-Workshop/images/5.5-Neon-Operations/image042.png)
+![Figure 14. Desktop interface](/5-Workshop/images/5.5-Neon-Operations/image044.png)
 
 ---
 

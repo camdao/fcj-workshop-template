@@ -19,7 +19,7 @@ Open the CloudFront console, go to **Distributions**, and select **Create distri
 
 **Domain (Route 53 managed domain – optional):** Leave this blank because the project uses the default `*.cloudfront.net` URL provided by AWS.
 
-![image011.png](/images/5-Workshop/5.5-Neon-Operations/image011.png)
+![image011.png](/5-Workshop/images/5.5-Neon-Operations/image011.png)
 
 ### Configure the S3 Origin and OAC
 
@@ -35,14 +35,14 @@ Open the CloudFront console, go to **Distributions**, and select **Create distri
 
 **Cache settings:** Keep **Use recommended cache settings tailored to serving S3 content**.
 
-![image013.png](/images/5-Workshop/5.5-Neon-Operations/image013.png)
+![image013.png](/5-Workshop/images/5.5-Neon-Operations/image013.png)
 
 ### Adjust the ALB Origin
 
 After creating the distribution, open **Distributions**, select the newly created distribution, open the **Origins** tab, and edit the linked Elastic Load Balancing origin. Set *Protocol* to **HTTP only** to match the current ALB/API configuration and avoid communication issues or `400 Bad Request` responses caused by a protocol mismatch.
 
-![image015.png](/images/5-Workshop/5.5-Neon-Operations/image015.png)
+![image015.png](/5-Workshop/images/5.5-Neon-Operations/image015.png)
 
 Wait until the distribution status is **Enabled** and deployment is complete, then open the deployed URL.
 
-![image017.png](/images/5-Workshop/5.5-Neon-Operations/image017.png)
+![image017.png](/5-Workshop/images/5.5-Neon-Operations/image017.png)

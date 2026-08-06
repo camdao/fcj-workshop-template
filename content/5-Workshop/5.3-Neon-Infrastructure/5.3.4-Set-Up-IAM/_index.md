@@ -19,7 +19,7 @@ pre : " <b> 5.3.4. </b> "
    - `s3:GetObject`
    - `s3:PutObject`
 
-![Figure 15. Create IAM Role for ECS](/images/5-Workshop/5.3-neon-infrastructure/placeholder-iam-role.png)
+![Figure 15. Create IAM Role for ECS](/5-Workshop/images/5.3-neon-infrastructure/placeholder-iam-role.png)
 
 ### 5.3.16. Create GitHub OIDC Provider and IAM Role for GitHub Actions
 
@@ -34,4 +34,4 @@ pre : " <b> 5.3.4. </b> "
 9. Attach the appropriate policy so GitHub Actions can deploy to S3/ECR/ECS.
 10. Configure the trust policy to allow only the specified repository and branch to Assume the Role.
 
-![Figure 16. Set up GitHub OIDC](/images/5-Workshop/5.3-neon-infrastructure/placeholder-github-oidc.png)
+![Figure 16. Set up GitHub OIDC](/5-Workshop/images/5.3-neon-infrastructure/placeholder-github-oidc.png)

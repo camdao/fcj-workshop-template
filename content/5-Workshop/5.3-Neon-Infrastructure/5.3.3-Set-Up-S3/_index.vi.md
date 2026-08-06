@@ -25,7 +25,7 @@ Các bước:
 6. Nhấn Create bucket.
 7. Lặp lại cho đủ 4 bucket.
 
-![Hình 11. Tạo S3 buckets](/images/5-Workshop/5.3-neon-infrastructure/placeholder-s3-buckets.png)
+![Hình 11. Tạo S3 buckets](/5-Workshop/images/5.3-neon-infrastructure/placeholder-s3-buckets.png)
 
 ### 5.3.12. Bật Versioning cho media và audio bucket
 
@@ -35,7 +35,7 @@ Các bước:
 4. Chọn Enable.
 5. Lặp lại tương tự với bucket `neonfoodmap-audio-dev`.
 
-![Hình 12. Bật Versioning](/images/5-Workshop/5.3-neon-infrastructure/placeholder-s3-versioning.png)
+![Hình 12. Bật Versioning](/5-Workshop/images/5.3-neon-infrastructure/placeholder-s3-versioning.png)
 
 ### 5.3.13. Cấu hình lifecycle rule cho bucket lưu trữ
 
@@ -46,7 +46,7 @@ Các bước:
 5. Chọn Apply to all objects in the bucket.
 6. Chọn chuyển object sang `Standard-IA` sau 90 ngày.
 
-![Hình 13. Cấu hình Lifecycle Rule](/images/5-Workshop/5.3-neon-infrastructure/placeholder-s3-lifecycle.png)
+![Hình 13. Cấu hình Lifecycle Rule](/5-Workshop/images/5.3-neon-infrastructure/placeholder-s3-lifecycle.png)
 
 ### 5.3.14. Chặn truy cập public và bật ACL cho bucket
 
@@ -60,4 +60,4 @@ Các bước:
 8. Chọn `Bucket owner preferred`.
 9. Nhấn Save changes.
 
-![Hình 14. Cấu hình quyền truy cập bucket](/images/5-Workshop/5.3-neon-infrastructure/placeholder-s3-permissions.png)
+![Hình 14. Cấu hình quyền truy cập bucket](/5-Workshop/images/5.3-neon-infrastructure/placeholder-s3-permissions.png)

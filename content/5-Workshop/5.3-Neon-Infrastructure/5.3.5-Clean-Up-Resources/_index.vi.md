@@ -16,5 +16,5 @@ Khi kết thúc dự án, thực hiện theo thứ tự sau để tránh phát s
 4. Xóa Security Group liên quan
 5. Xóa bucket S3 không còn sử dụng
 
-![Hình 17. Dọn dẹp tài nguyên](/images/5-Workshop/5.3-neon-infrastructure/placeholder-cleanup.png)
+![Hình 17. Dọn dẹp tài nguyên](/5-Workshop/images/5.3-neon-infrastructure/placeholder-cleanup.png)
 

@@ -22,11 +22,11 @@ cd aws_04_deploy
 .\01_create_ecr_repos.ps1
 ```
 
-![Executing ECR Repositories creation script](/images/5-Workshop/5.3-Neon-Infracstructure/image084.png)
+![Executing ECR Repositories creation script](/5-Workshop/images/5.3-Neon-Infracstructure/image084.png)
 
 Expected output displaying URI for each repository:
 
-![ECR Repositories creation result](/images/5-Workshop/5.3-Neon-Infracstructure/image085.png)
+![ECR Repositories creation result](/5-Workshop/images/5.3-Neon-Infracstructure/image085.png)
 
 ##### Method 2: Execution via AWS CLI or Management Console
 Execute the following CLI commands (requires configured AWS credentials):
@@ -47,7 +47,7 @@ aws ecr create-repository \
   --encryption-configuration encryptionType=AES256
 ```
 
-![Manual ECR Repository creation via AWS Console](/images/5-Workshop/5.3-Neon-Infracstructure/image086.png)
+![Manual ECR Repository creation via AWS Console](/5-Workshop/images/5.3-Neon-Infracstructure/image086.png)
 
 ---
 

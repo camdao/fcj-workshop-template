@@ -19,7 +19,7 @@ pre : " <b> 5.3.4. </b> "
    - `s3:GetObject`
    - `s3:PutObject`
 
-![Hình 15. Tạo IAM Role cho ECS](/images/5-Workshop/5.3-neon-infrastructure/placeholder-iam-role.png)
+![Hình 15. Tạo IAM Role cho ECS](/5-Workshop/images/5.3-neon-infrastructure/placeholder-iam-role.png)
 
 ### 5.3.16. Tạo GitHub OIDC provider và IAM Role cho GitHub Actions
 
@@ -34,4 +34,4 @@ pre : " <b> 5.3.4. </b> "
 9. Gắn policy phù hợp để GitHub Actions triển khai lên S3/ECR/ECS.
 10. Cấu hình trust policy để chỉ repository và nhánh được phép Assume Role.
 
-![Hình 16. Thiết lập GitHub OIDC](/images/5-Workshop/5.3-neon-infrastructure/placeholder-github-oidc.png)
+![Hình 16. Thiết lập GitHub OIDC](/5-Workshop/images/5.3-neon-infrastructure/placeholder-github-oidc.png)

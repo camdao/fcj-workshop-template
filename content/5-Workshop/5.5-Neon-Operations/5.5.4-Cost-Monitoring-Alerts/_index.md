@@ -23,7 +23,7 @@ Open the **AWS Billing and Cost Management console**, select **Budgets**, and ch
 
 **Enter your budgeted amount ($):** Enter `40.00` to set a monthly budget limit of $40.00.
 
-![image045.jpg](/images/5-Workshop/5.5-Neon-Operations/image045.jpg)
+![image045.jpg](/5-Workshop/images/5.5-Neon-Operations/image045.jpg)
 
 ### Configure the Budget Scope and Tags
 
@@ -38,7 +38,7 @@ Open the **AWS Billing and Cost Management console**, select **Budgets**, and ch
 - **Key:** `Project` | **Value – optional:** `NeonFoodmap`
 - **Key:** `ManagedBy` | **Value – optional:** `CloudFormation`
 
-![image046.jpg](/images/5-Workshop/5.5-Neon-Operations/image046.jpg)
+![image046.jpg](/5-Workshop/images/5.5-Neon-Operations/image046.jpg)
 
 ### Configure Alerts and Review Budget Details
 
@@ -52,4 +52,4 @@ Open **Budgets**, select `NeonFoodmap-Monthly-Budget`, and review the budget det
 - **Actual cost > 70%:** Sends an alert when actual spending exceeds **70%** ($28.00) of the $40.00 budget.
 - **Forecasted cost > 90%:** Sends an alert when forecasted end-of-month spending exceeds **90%** ($36.00) of the $40.00 budget.
 
-![image047.jpg](/images/5-Workshop/5.5-Neon-Operations/image047.jpg)
+![image047.jpg](/5-Workshop/images/5.5-Neon-Operations/image047.jpg)

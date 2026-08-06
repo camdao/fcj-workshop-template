@@ -23,7 +23,7 @@ Mở **AWS Billing and Cost Management Console** → chọn **Budgets** và ch�
 
 **Enter your budgeted amount ($):** Nhập `40.00` (đặt hạn mức ngân sách $40.00/tháng).
 
-![image045.jpg](/images/5-Workshop/5.5-Neon-Operations/image045.jpg)
+![image045.jpg](/5-Workshop/images/5.5-Neon-Operations/image045.jpg)
 
 ### Cấu hình Phạm vi Ngân sách (Budget Scope) và Thẻ Tag
 
@@ -38,7 +38,7 @@ Mở **AWS Billing and Cost Management Console** → chọn **Budgets** và ch�
 - **Key:** `Project` | **Value - optional:** `NeonFoodmap`
 - **Key:** `ManagedBy` | **Value - optional:** `CloudFormation`
 
-![image046.jpg](/images/5-Workshop/5.5-Neon-Operations/image046.jpg)
+![image046.jpg](/5-Workshop/images/5.5-Neon-Operations/image046.jpg)
 
 ### Thiết lập Cảnh báo (Alerts) và Kiểm tra Trang Chi tiết Ngân sách
 
@@ -52,4 +52,4 @@ Mở **Budgets** → chọn `NeonFoodmap-Monthly-Budget` để xem thông tin ch
 - **Actual cost > 70%:** Kích hoạt cảnh báo khi chi phí thực tế vượt quá **70%** ($28.00) so với ngân sách $40.00.
 - **Forecasted cost > 90%:** Kích hoạt cảnh báo dự báo khi chi phí ước tính đến cuối tháng vượt quá **90%** ($36.00) so với ngân sách $40.00.
 
-![image047.jpg](/images/5-Workshop/5.5-Neon-Operations/image047.jpg)
+![image047.jpg](/5-Workshop/images/5.5-Neon-Operations/image047.jpg)

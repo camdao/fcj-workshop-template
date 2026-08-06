@@ -27,17 +27,17 @@ Sau khi hoàn thành phần này, hệ thống sẽ đáp ứng các yêu cầu 
 1. Đăng nhập **AWS Management Console**.
 2. Truy cập dịch vụ **CloudWatch**.
 3. Chọn **Log Groups**.
-Hình 77 ![Hình 77.](/images/5-Workshop/5.5-Neon-Operations/image077.png)
+Hình 77 ![Hình 77.](/5-Workshop/images/5.5-Neon-Operations/image077.png)
 
 4. Chọn Log Group cần cấu hình.
-Hình 78 ![Hình 78.](/images/5-Workshop/5.5-Neon-Operations/image078.png)
+Hình 78 ![Hình 78.](/5-Workshop/images/5.5-Neon-Operations/image078.png)
 
 5. Chọn **Actions → Edit retention setting**.
-Hình 79 ![Hình 79.](/images/5-Workshop/5.5-Neon-Operations/image079.png)
+Hình 79 ![Hình 79.](/5-Workshop/images/5.5-Neon-Operations/image079.png)
 
 6. Chọn thời gian lưu trữ là **30 Days**.
 7. Nhấn **Save** để áp dụng.
-Hình 80 ![Hình 80.](/images/5-Workshop/5.5-Neon-Operations/image080.png)
+Hình 80 ![Hình 80.](/5-Workshop/images/5.5-Neon-Operations/image080.png)
 
 > Lặp lại thao tác này cho tất cả Log Group của hệ thống.
 
@@ -48,17 +48,17 @@ Hình 80 ![Hình 80.](/images/5-Workshop/5.5-Neon-Operations/image080.png)
 1. Trong **CloudWatch**, chọn **Log Groups**.
 
 2. Nhấn **Create log group**.
-Hình 81 ![Hình 81.](/images/5-Workshop/5.5-Neon-Operations/image081.png)
+Hình 81 ![Hình 81.](/5-Workshop/images/5.5-Neon-Operations/image081.png)
 
 3. Đặt tên Log Group, ví dụ:
 
 ```
 /aws/alb/access-logs
 ```
-Hình 82 ![Hình 82.](/images/5-Workshop/5.5-Neon-Operations/image082.png)
+Hình 82 ![Hình 82.](/5-Workshop/images/5.5-Neon-Operations/image082.png)
 
 4. Chọn cấu hình mặc định.
-Hình 83 ![Hình 83.](/images/5-Workshop/5.5-Neon-Operations/image083.png)
+Hình 83 ![Hình 83.](/5-Workshop/images/5.5-Neon-Operations/image083.png)
 
 5. Nhấn **Create** để hoàn tất.
 
@@ -66,10 +66,10 @@ Hình 83 ![Hình 83.](/images/5-Workshop/5.5-Neon-Operations/image083.png)
 
 ---
 
-Hình 84 ![Hình 84.](/images/5-Workshop/5.5-Neon-Operations/image084.png)
-Hình 85 ![Hình 85.](/images/5-Workshop/5.5-Neon-Operations/image085.png)
-Hình 86 ![Hình 86.](/images/5-Workshop/5.5-Neon-Operations/image086.png)
-Hình 87 ![Hình 87.](/images/5-Workshop/5.5-Neon-Operations/image087.png)
+Hình 84 ![Hình 84.](/5-Workshop/images/5.5-Neon-Operations/image084.png)
+Hình 85 ![Hình 85.](/5-Workshop/images/5.5-Neon-Operations/image085.png)
+Hình 86 ![Hình 86.](/5-Workshop/images/5.5-Neon-Operations/image086.png)
+Hình 87 ![Hình 87.](/5-Workshop/images/5.5-Neon-Operations/image087.png)
 
 ### Bước 3. Tạo Log Group cho Application Logs
 
@@ -87,14 +87,14 @@ hoặc
 ```
 
 3. Nhấn **Create**.
-Hình 104 ![Hình 104.](/images/5-Workshop/5.5-Neon-Operations/image104.png)
+Hình 104 ![Hình 104.](/5-Workshop/images/5.5-Neon-Operations/image104.png)
 
 4. Cấu hình ECS Task Definition sử dụng **awslogs Log Driver**.
 5. Khởi động lại ECS Service nếu cần để Log bắt đầu được ghi vào CloudWatch.
 
 ---
 
-Hình 106 ![Hình 106.](/images/5-Workshop/5.5-Neon-Operations/image106.png)
+Hình 106 ![Hình 106.](/5-Workshop/images/5.5-Neon-Operations/image106.png)
 
 ### Bước 4. Cấu hình Log Subscription phục vụ Anomaly Detection
 
@@ -115,7 +115,7 @@ Hình 106 ![Hình 106.](/images/5-Workshop/5.5-Neon-Operations/image106.png)
 ### Bước 5. Tạo các truy vấn CloudWatch Log Insights
 
 1. Truy cập **CloudWatch → Logs Insights**.
-Hình 105 ![Hình 105.](/images/5-Workshop/5.5-Neon-Operations/image105.png)
+Hình 105 ![Hình 105.](/5-Workshop/images/5.5-Neon-Operations/image105.png)
 
 2. Chọn Log Group cần phân tích.
 3. Tạo và lưu các truy vấn thường dùng, ví dụ:
@@ -125,11 +125,11 @@ Hình 105 ![Hình 105.](/images/5-Workshop/5.5-Neon-Operations/image105.png)
 - Tìm Request có thời gian xử lý lớn
 - Tìm Exception theo từ khóa
 - Thống kê các IP truy cập nhiều nhất
-Hình 107 ![Hình 107.](/images/5-Workshop/5.5-Neon-Operations/image107.png)
+Hình 107 ![Hình 107.](/5-Workshop/images/5.5-Neon-Operations/image107.png)
 
 4. Đặt tên cho từng truy vấn.
 5. Chọn **Save query** để sử dụng lại sau này.
-Hình 108 ![Hình 108.](/images/5-Workshop/5.5-Neon-Operations/image108.png)
+Hình 108 ![Hình 108.](/5-Workshop/images/5.5-Neon-Operations/image108.png)
 
 ---
 
@@ -138,24 +138,24 @@ Hình 108 ![Hình 108.](/images/5-Workshop/5.5-Neon-Operations/image108.png)
 1. Truy cập dịch vụ **Amazon VPC**.
 2. Chọn **Your VPCs**.
 3. Chọn VPC đang triển khai hệ thống.
-Hình 98 ![Hình 98.](/images/5-Workshop/5.5-Neon-Operations/image098.png)
+Hình 98 ![Hình 98.](/5-Workshop/images/5.5-Neon-Operations/image098.png)
 
 4. Chọn tab **Flow Logs**.
-Hình 99 ![Hình 99.](/images/5-Workshop/5.5-Neon-Operations/image099.png)
+Hình 99 ![Hình 99.](/5-Workshop/images/5.5-Neon-Operations/image099.png)
 
 5. Nhấn **Create Flow Log**.
-Hình 100 ![Hình 100.](/images/5-Workshop/5.5-Neon-Operations/image100.png)
+Hình 100 ![Hình 100.](/5-Workshop/images/5.5-Neon-Operations/image100.png)
 
 6. Thiết lập:
    - Filter: **All**
    - Destination: **CloudWatch Logs**
    - Chọn hoặc tạo Log Group mới
    - Chọn IAM Role phù hợp
-Hình 101 ![Hình 101.](/images/5-Workshop/5.5-Neon-Operations/image101.png)
-Hình 102 ![Hình 102.](/images/5-Workshop/5.5-Neon-Operations/image102.png)
+Hình 101 ![Hình 101.](/5-Workshop/images/5.5-Neon-Operations/image101.png)
+Hình 102 ![Hình 102.](/5-Workshop/images/5.5-Neon-Operations/image102.png)
 
 7. Nhấn **Create Flow Log**.
-Hình 103 ![Hình 103.](/images/5-Workshop/5.5-Neon-Operations/image103.png)
+Hình 103 ![Hình 103.](/5-Workshop/images/5.5-Neon-Operations/image103.png)
 
 > VPC Flow Logs hỗ trợ phân tích lưu lượng mạng và xử lý các vấn đề kết nối giữa các tài nguyên trong VPC.
 

@@ -22,11 +22,11 @@ cd aws_04_deploy
 .\01_create_ecr_repos.ps1
 ```
 
-![Chạy script khởi tạo ECR Repositories](/images/5-Workshop/5.3-Neon-Infracstructure/image084.png)
+![Chạy script khởi tạo ECR Repositories](/5-Workshop/images/5.3-Neon-Infracstructure/image084.png)
 
 Kết quả hiển thị URI của từng repository:
 
-![Kết quả khởi tạo ECR Repositories thành công](/images/5-Workshop/5.3-Neon-Infracstructure/image085.png)
+![Kết quả khởi tạo ECR Repositories thành công](/5-Workshop/images/5.3-Neon-Infracstructure/image085.png)
 
 ##### Cách 2: Sử dụng AWS CLI hoặc Thao tác Thủ công
 Chạy các lệnh sau trong terminal (yêu cầu AWS CLI đã xác thực):
@@ -47,7 +47,7 @@ aws ecr create-repository \
   --encryption-configuration encryptionType=AES256
 ```
 
-![Tạo ECR Repository thủ công trên AWS Console](/images/5-Workshop/5.3-Neon-Infracstructure/image086.png)
+![Tạo ECR Repository thủ công trên AWS Console](/5-Workshop/images/5.3-Neon-Infracstructure/image086.png)
 
 ---
 

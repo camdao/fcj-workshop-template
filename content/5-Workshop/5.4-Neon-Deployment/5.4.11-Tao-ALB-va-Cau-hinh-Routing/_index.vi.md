@@ -21,7 +21,7 @@ pre : " <b> 5.4.11. </b> "
    - HTTPS `443` từ `0.0.0.0/0`
 5. Giữ outbound rule mặc định.
 
-![Hình 11. Tạo ALB security group](/images/5-Workshop/5.4-neon-deployment/placeholder-alb-sg.png)
+![Hình 11. Tạo ALB security group](/5-Workshop/images/5.4-neon-deployment/placeholder-alb-sg.png)
 
 #### 5.4.11.2. Tạo target group cho frontend và backend
 
@@ -38,7 +38,7 @@ Các cấu hình chính:
 - Unhealthy threshold: `2`
 - Interval: `30 seconds`
 
-![Hình 12. Tạo target group](/images/5-Workshop/5.4-neon-deployment/placeholder-target-group.png)
+![Hình 12. Tạo target group](/5-Workshop/images/5.4-neon-deployment/placeholder-target-group.png)
 
 #### 5.4.11.3. Tạo Application Load Balancer
 
@@ -53,7 +53,7 @@ Các cấu hình chính:
 6. Cấu hình listener `HTTP:80` và route mặc định tới frontend target group.
 7. Tạo load balancer.
 
-![Hình 13. Tạo Application Load Balancer](/images/5-Workshop/5.4-neon-deployment/placeholder-alb.png)
+![Hình 13. Tạo Application Load Balancer](/5-Workshop/images/5.4-neon-deployment/placeholder-alb.png)
 
 #### 5.4.11.4. Tạo listener rule cho API path
 
@@ -65,5 +65,5 @@ Các cấu hình chính:
    - Action: Forward tới target group backend
 4. Lưu rule.
 
-![Hình 14. Tạo listener rule chia route /api](/images/5-Workshop/5.4-neon-deployment/placeholder-listener-rule.png)
+![Hình 14. Tạo listener rule chia route /api](/5-Workshop/images/5.4-neon-deployment/placeholder-listener-rule.png)
 

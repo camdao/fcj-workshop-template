@@ -1,5 +1,5 @@
 ---
-title: "AWS: Kiến trúc Cloud doanh nghiệp và Ứng dụng thực tế"
+title: "Event 1"
 date: 2026-07-04
 weight: 1
 chapter: false

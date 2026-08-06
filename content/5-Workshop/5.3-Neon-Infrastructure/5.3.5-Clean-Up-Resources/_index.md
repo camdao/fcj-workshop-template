@@ -16,4 +16,4 @@ When the project is complete, follow this order to avoid incurring unnecessary c
 4. Delete the associated Security Group
 5. Delete any unused S3 buckets
 
-![Figure 17. Clean up resources](/images/5-Workshop/5.3-neon-infrastructure/placeholder-cleanup.png)
+![Figure 17. Clean up resources](/5-Workshop/images/5.3-neon-infrastructure/placeholder-cleanup.png)

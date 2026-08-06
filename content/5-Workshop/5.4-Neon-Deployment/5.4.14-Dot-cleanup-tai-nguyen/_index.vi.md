@@ -19,5 +19,5 @@ Các bước chủ yếu:
 5. Xóa load balancer và target group
 6. Xóa stack CloudFormation nếu không còn cần thiết
 
-![Hình 17. Dọn dẹp tài nguyên sau triển khai](/images/5-Workshop/5.4-neon-deployment/placeholder-cleanup.png)
+![Hình 17. Dọn dẹp tài nguyên sau triển khai](/5-Workshop/images/5.4-neon-deployment/placeholder-cleanup.png)
 

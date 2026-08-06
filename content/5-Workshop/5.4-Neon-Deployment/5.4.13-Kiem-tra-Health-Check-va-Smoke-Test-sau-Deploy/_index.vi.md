@@ -22,5 +22,5 @@ Ví dụ kiểm tra:
 - Frontend: `http://<alb-dns>`
 - Backend: `http://<alb-dns>/api/...`
 
-![Hình 16. Kiểm tra health check và smoke test](/images/5-Workshop/5.4-neon-deployment/placeholder-smoke-test.png)
+![Hình 16. Kiểm tra health check và smoke test](/5-Workshop/images/5.4-neon-deployment/placeholder-smoke-test.png)
 
