@@ -24,6 +24,8 @@ pre: " <b> 5.2. </b> "
 
 Attach the following IAM permission policy to your AWS user account to deploy and clean up resources in this workshop.
 
+{{< expand title="Show IAM Policy" >}}
+
 ```json
 {
   "Version": "2012-10-17",
@@ -159,6 +161,8 @@ Attach the following IAM permission policy to your AWS user account to deploy an
   ]
 }
 ```
+
+{{< /expand >}}
 
 ## Set up IAM with CloudFormation
 

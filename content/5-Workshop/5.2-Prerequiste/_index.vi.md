@@ -23,6 +23,8 @@ pre: " <b> 5.2. </b> "
 
 Gắn IAM permission policy sau vào tài khoản AWS user của bạn để triển khai và dọn dẹp tài nguyên trong workshop này.
 
+{{< expand title="Hiển thị IAM Policy" >}}
+
 ```json
 {
   "Version": "2012-10-17",
@@ -158,6 +160,8 @@ Gắn IAM permission policy sau vào tài khoản AWS user của bạn để tri
   ]
 }
 ```
+
+{{< /expand >}}
 
 ## Khởi tạo IAM bằng CloudFormation
 

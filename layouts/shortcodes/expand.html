@@ -1,0 +1,19 @@
+{{- $title := .Get "title" | default "Show more" -}}
+{{- $open := .Get "open" | default "false" -}}
+<details{{- if eq $open "true" }} open{{- end }}>
+  <summary style="cursor: pointer; padding: 10px; background-color: #f0f0f0; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 10px; font-weight: 500;">
+    <span style="user-select: none;">▶</span> {{ $title }}
+  </summary>
+  <div style="margin-top: 10px;">
+    {{- .Inner | markdownify -}}
+  </div>
+</details>
+<style>
+details[open] summary span {
+  transform: rotate(90deg);
+  display: inline-block;
+}
+details summary::-webkit-details-marker {
+  display: none;
+}
+</style>
