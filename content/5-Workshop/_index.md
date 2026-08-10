@@ -1,33 +1,27 @@
 ---
 title: "Workshop"
-date: 2024-01-01
+date: 2026-08-04
 weight: 5
 chapter: false
 pre: " <b> 5. </b> "
 ---
+## Workshop: Deploy NeonFoodMap on AWS
 
-# NeonFoodMap - Full Stack Application Deployment on AWS
+This workshop explains how to deploy **NeonFoodMap**, a digital food and tourism discovery platform, on AWS. The application includes a React frontend, Django backend, MySQL database, points-of-interest (POI) data, audio guides, tours, and sandbox payments.
 
-#### Overview
+The infrastructure is designed and operated in **Asia Pacific (Singapore) `ap-southeast-1`** with a multi-Availability Zone VPC. The guide covers infrastructure design, access control, application packaging, deployment, monitoring, and resource cleanup.
 
-This workshop guides you through the complete process of deploying a full-stack application (NeonFoodMap) on AWS infrastructure. You will learn how to design, build, and operate a production-ready system using modern AWS services and DevOps practices.
+The main services are:
 
-The NeonFoodMap application is a location-based food discovery platform that allows users to explore points of interest (POIs), listen to audio commentary, and book premium tours with integrated payment processing.
+* **Compute and delivery:** Amazon ECS Fargate and Application Load Balancer run the containerized Django backend; Amazon S3 and CloudFront deliver the React SPA and static assets.
+* **Data, security, and CI/CD:** Amazon RDS MySQL stores application data; GitHub Actions authenticates through OIDC/AWS STS so deployment does not need long-lived access keys; CloudWatch provides logs, metrics, and alerts.
 
-#### Architecture Overview
+## Contents
 
-The workshop covers deployment of a multi-tier architecture including:
-- **Frontend**: React application served via S3 and CloudFront CDN
-- **Backend**: Node.js API running on ECS Fargate behind Application Load Balancer
-- **Database**: Amazon RDS MySQL for persistent data storage
-- **Media Storage**: S3 buckets for images and audio files
-- **CI/CD**: GitHub Actions workflow with automated deployment
-- **Monitoring**: CloudWatch dashboards, alarms, and log aggregation
-
-#### Content
-
-1. [Workshop Overview](5.1-workshop-overview/)
-2. [Prerequisites](5.2-prerequiste/)
-3. [Infrastructure Setup](5.3-neon-infrastructure/)
-4. [Application Deployment](5.4-neon-deployment/)
-5. [Operations and Monitoring](5.5-neon-operations/)
+1. [Workshop overview](5.1-Workshop-overview/)
+2. [Prerequisites](5.2-Prerequiste/)
+3. [System architecture](5.3-Structure/)
+4. [Deployment steps](5.4-Onprem/)
+5. [Verify deployment and system monitoring](5.5-Policy/)
+6. [Application interface and features](5.6-Project-Visual/)
+7. [Clean up resources](5.7-Cleanup/)
