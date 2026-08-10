@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 1. </b> "
 ---
 
-Ghi lại nhật ký công việc hằng tuần trong quá trình thực tập tại First Cloud Journey - AWS Study Group (22/06/2026 - 15/08/2026).
+Ghi lại nhật ký công việc hằng tuần trong quá trình thực tập tại First Cloud Journey - AWS Study Group (11/06/2026 - 31/08/2026).
 
 **Tuần 1:** [Làm quen với AWS và các dịch vụ AWS cơ bản - AWS Budgets & IAM](1.1-week1/)
 

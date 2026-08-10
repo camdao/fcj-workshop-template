@@ -5,104 +5,90 @@ weight: 1
 chapter: false
 pre: " <b> 5.1. </b> "
 ---
-## Bối cảnh
 
-**NeonFoodMap** là nền tảng thuyết minh tự động và khám phá du lịch số dành cho **Phố ẩm thực Vĩnh Khánh, Quận 4, Thành phố Hồ Chí Minh**. Ứng dụng giúp du khách khám phá các điểm ẩm thực và văn hóa thông qua bản đồ, thông tin điểm đến (POI), hình ảnh và nội dung thuyết minh âm thanh. Trải nghiệm có thể được kích hoạt theo vị trí địa lý hoặc QR code.
+## 1. Giới thiệu dự án
 
-Hệ thống phục vụ ba nhóm chính: du khách cần tra cứu và nghe thuyết minh; đối tác kinh doanh địa phương cần cập nhật thực đơn/ưu đãi; và quản trị viên cần quản lý POI, nội dung, người dùng và tình trạng vận hành. Ứng dụng gồm React frontend, Django backend và cơ sở dữ liệu MySQL.
+**NeonFoodMap** là nền tảng du lịch số tự động cho **Phố ẩm thực Vĩnh Khánh, Quận 4, TP.HCM**. Ứng dụng giúp du khách khám phá điểm ẩm thực và văn hóa qua bản đồ tương tác, thông tin POI, nội dung đa phương tiện và hướng dẫn âm thanh, truy cập qua vị trí hoặc mã QR.
 
 **Repository:** [github.com/HaoWasabi/NeonFoodmap](https://github.com/HaoWasabi/NeonFoodmap)
 
-## Vấn đề giải quyết
+**Người dùng:**
+- **Du khách**: Tìm kiếm điểm đến và nghe hướng dẫn âm thanh
+- **Đối tác kinh doanh**: Cập nhật thực đơn và khuyến mãi
+- **Quản trị viên**: Quản lý nội dung, người dùng và vận hành
 
-Doanh nghiệp ẩm thực & du lịch thường gặp khó khăn khi thông tin địa điểm, thực đơn và media bị phân tán, tốn nhiều nguồn lực vận hành nhưng khó mở rộng cho lượng lớn du khách. Về hạ tầng, hệ thống dễ gặp rủi ro bảo mật (lộ database, đính kèm access key), quy trình deploy thủ công tốn thời gian và thiếu công cụ kiểm soát chi phí hay sự cố tức thì.
+**Công nghệ:**
+- Frontend: React SPA
+- Backend: Django REST API
+- Database: MySQL
 
-**NeonFoodMap** giải quyết bằng cách số hóa toàn bộ nội dung thành trải nghiệm đa phương tiện tập trung, kết hợp hạ tầng AWS bảo mật Multi-AZ, CI/CD tự động qua GitHub OIDC và hệ thống giám sát vận hành.
+## 2. Vấn đề & Giải pháp
 
-## Kiến trúc tổng quan
+### Thách thức hiện tại
 
-NeonFoodMap dùng kiến trúc **multi-tier** trong Amazon VPC tại `ap-southeast-1`, trải trên hai Availability Zone để tăng tính sẵn sàng. Frontend React SPA được build tĩnh và phân phối qua CloudFront/S3; backend Django API chạy trên ECS Fargate trong private subnet; dữ liệu nằm trên RDS MySQL private và media/audio được lưu trên S3.
+**Vận hành kinh doanh:**
+- **Thông tin phân tán**: Dữ liệu vị trí, thực đơn, hình ảnh và nội dung audio bị rải rác trên nhiều nền tảng và hệ thống, khó duy trì tính nhất quán và cung cấp trải nghiệm thống nhất
+- **Chi phí vận hành cao**: Quản lý và cập nhật nội dung thủ công đòi hỏi nhiều thời gian và nguồn nhân lực
+- **Khó mở rộng quy mô**: Hệ thống hiện tại khó xử lý lượng lớn du khách hiệu quả, đặc biệt trong mùa du lịch cao điểm
+- **Trải nghiệm không đồng nhất**: Du khách nhận được chất lượng thông tin khác nhau tùy thuộc vào kênh truy cập
 
-### Sơ đồ kiến trúc tổng thể
+**Hạ tầng kỹ thuật:**
+- **Lỗ hổng bảo mật**: Database bị lộ, credentials được hardcode và thiếu kiểm soát truy cập đúng cách tạo ra rủi ro bảo mật nghiêm trọng
+- **Triển khai thủ công**: Quy trình triển khai thủ công tốn thời gian dẫn đến chu kỳ phát hành chậm và nguy cơ lỗi do con người cao hơn
+- **Không có giám sát**: Thiếu logging, metrics và alerting phù hợp khiến việc phát hiện và giải quyết vấn đề trở nên khó khăn
+- **Không rõ chi phí**: Không có cơ chế theo dõi chi phí hạ tầng rõ ràng hoặc ngăn ngừa vượt ngân sách
+
+### Giải pháp triển khai
+
+NeonFoodMap giải quyết các thách thức này thông qua kiến trúc cloud-native hiện đại:
+
+**Nền tảng tập trung:**
+- Nền tảng thống nhất duy nhất cho tất cả nội dung POI, media và hướng dẫn audio
+- API và data model nhất quán cho mọi giao diện người dùng
+- Quản lý nội dung được đơn giản hóa cho đối tác kinh doanh
+
+**Hạ tầng AWS bảo mật:**
+- Triển khai VPC Multi-AZ cho tính sẵn sàng cao và khả năng chịu lỗi
+- Private subnet cho database và backend service
+- IAM role và security group tuân thủ nguyên tắc least-privilege
+- Mã hóa dữ liệu khi lưu trữ và truyền tải
+
+**CI/CD tự động:**
+- GitHub Actions workflow cho testing và deployment tự động
+- Xác thực OIDC loại bỏ AWS credentials lâu dài
+- Rolling update zero-downtime cho backend service
+- Tự động invalidate CloudFront cache cho frontend update
+
+**Giám sát toàn diện:**
+- CloudWatch log và metrics cho tất cả component
+- SNS email alert cho vấn đề nghiêm trọng và bất thường
+- AWS Budgets và Cost Anomaly Detection cho quản trị tài chính
+- Dashboard cho khả năng quan sát sức khỏe hệ thống realtime
+
+## 3. Tổng quan kiến trúc
 
 ![Kiến trúc tổng thể nền tảng trên AWS](images/platform_architecture.jpg)
 
-### Các lớp kiến trúc
+Hệ thống dùng **kiến trúc đa tầng** trong Amazon VPC trải trên hai Availability Zone tại `ap-southeast-1`:
 
-| Lớp | Thành phần | Vai trò chính |
-| --- | --- | --- |
-| CI/CD | GitHub Repository, GitHub Actions, Docker Build, AWS STS, Amazon ECR | Tự động kiểm thử, build image, xác thực OIDC và triển khai phiên bản mới. |
-| Presentation | Amazon CloudFront, Amazon S3 Static Website | Phân phối frontend với độ trễ thấp, tăng tốc truy cập và giảm tải cho backend. |
-| Application | ALB, ECS Cluster, Backend Service | Chạy backend API trên Fargate, định tuyến request, rolling update và khởi động lại task khi lỗi. |
-| Data | Amazon RDS MySQL Multi-AZ | Lưu dữ liệu nghiệp vụ trong private database subnet; tăng chịu lỗi và hỗ trợ failover. |
-| Monitoring | Amazon CloudWatch, Amazon SNS | Thu thập log/metric và gửi email alert khi phát hiện bất thường. |
+**Các tầng kiến trúc:**
 
-### ECS Cluster và điều hướng lưu lượng
+| Tầng | Thành phần | Mục đích |
+|------|-----------|----------|
+| **Presentation** | CloudFront, S3 | Phân phối React SPA toàn cầu độ trễ thấp |
+| **Application** | ALB, ECS Fargate | Chạy Django API container với auto-scaling |
+| **Data** | RDS MySQL, S3 | Lưu dữ liệu nghiệp vụ và media an toàn |
+| **Network** | VPC, Subnet, Gateway | Cách ly và định tuyến traffic an toàn |
+| **CI/CD** | GitHub Actions, OIDC, ECR | Tự động build và deployment |
+| **Monitoring** | CloudWatch, SNS | Theo dõi metrics, log và gửi cảnh báo |
 
-ECS Cluster chạy Backend Service trên Fargate, xử lý tất cả logic nghiệp vụ:
+## 4. Công nghệ sử dụng
 
-| Service | Triển khai | Trách nhiệm |
-| --- | --- | --- |
-| **Backend Service** | Django REST API trong Docker Container trên ECS Fargate | Authentication, business logic, truy cập RDS MySQL và quản lý media/audio trên S3. |
-
-**Load Balancing:** ALB tiếp nhận HTTP/HTTPS, thực hiện health check và chuyển request API đến Backend Service. Frontend tĩnh được phục vụ qua CloudFront/S3, gọi API thông qua ALB endpoint.
-
-## Tech stack
-
-| Lớp            | Công nghệ/Dịch vụ sử dụng                                                             | Vai trò trong NeonFoodMap                                                                                  |
-| --------------- | ------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| Frontend        | React, Vite                                                                                 | Xây dựng giao diện SPA, build static assets để phân phối qua CloudFront/S3                          |
-| Backend         | Django, Gunicorn, Python, Docker                                                            | Cung cấp API, xử lý nghiệp vụ, kết nối database và S3                                               |
-| Network         | Amazon VPC, public/private subnet, Internet Gateway, NAT Gateway, Application Load Balancer | Tách lớp mạng, cho phép truy cập Internet cần thiết và định tuyến request đến ứng dụng       |
-| Database        | Amazon RDS MySQL                                                                            | Lưu dữ liệu nghiệp vụ; dùng private access, backup, encryption và cấu hình đa AZ theo kiến trúc |
-| Storage/CDN     | Amazon S3, Amazon CloudFront, Origin Access Control                                         | Lưu frontend, media, audio, logs và phân phối nội dung tĩnh an toàn                                  |
-| Container       | Amazon ECR, Amazon ECS Fargate                                                              | Lưu Docker image và vận hành container backend                                                          |
-| CI/CD           | GitHub Actions, GitHub OIDC, AWS STS, IAM Role                                              | Kiểm tra, build, push image và deploy không cần AWS access key dài hạn                                |
-| Monitoring/Cost | Amazon CloudWatch, Amazon SNS, AWS Budgets, Cost Anomaly Detection                          | Thu log/metric, cảnh báo kỹ thuật và theo dõi chi phí                                                |
-
-## Quy trình triển khai và vận hành
-
-Quy trình phát hành tự động bắt đầu khi developer push source code lên nhánh chính:
-
-### Triển khai Backend:
-1. **Developer push backend code** → **GitHub Actions trigger workflow**.
-2. Workflow kiểm thử backend, **build Docker image** và xác thực với AWS bằng OIDC qua **AWS STS**.
-3. AWS STS cấp temporary credential; backend image được **push lên Amazon ECR**.
-4. ECS **pull image** mới và thực hiện **rolling update** để thay thế task mà không làm gián đoạn service.
-5. ALB tiếp tục chuyển request API đến các task healthy; Backend Service truy cập **RDS MySQL** và quản lý media/audio trên **Amazon S3**.
-
-### Triển khai Frontend:
-1. **Developer push frontend code** → **GitHub Actions trigger workflow**.
-2. Workflow build React SPA bằng **Vite**, tạo static assets (HTML, JS, CSS).
-3. Static files được **upload lên S3** bucket `neonfoodmap-frontend-dev`.
-4. **CloudFront cache invalidation** để phân phối phiên bản mới đến người dùng.
-
-### Giám sát:
-**CloudWatch** thu thập backend container logs, ECS metrics, ALB metrics và CloudFront metrics; **Amazon SNS** gửi email khi có cảnh báo hoặc sự cố.
-
-Luồng rút gọn:
-
-```text
-Backend Flow:
-Developer → GitHub Actions → Docker Build → OIDC/STS → ECR
-          → ECS Pull → Rolling Update → ALB → Backend → RDS/S3
-          
-Frontend Flow:
-Developer → GitHub Actions → Vite Build → S3 Upload → CloudFront Invalidation
-          
-Monitoring:
-CloudWatch (Backend + CloudFront) → SNS Email Alerts
-```
-
-## Kết quả đạt được
-
-- Hoàn thiện nền tảng AWS gồm VPC Multi-AZ, RDS MySQL private, S3 buckets (frontend, media, logs), IAM roles và cơ chế theo dõi chi phí.
-- Đóng gói backend Django bằng Docker, quản lý image trên Amazon ECR và kiểm tra image trước khi triển khai.
-- Triển khai backend ECS Fargate phía sau ALB/Target Group; kiểm tra API endpoints, health check, logs và troubleshooting qua CloudWatch.
-- Build frontend React SPA bằng Vite, upload lên S3 và phân phối qua CloudFront với Origin Access Control (OAC).
-- Tự động hóa CI/CD pipeline với GitHub Actions và OIDC (không cần access key dài hạn):
-  - Backend: Docker build → ECR → ECS rolling update
-  - Frontend: Vite build → S3 sync → CloudFront invalidation
-- Thiết lập monitoring với CloudWatch (logs, metrics, dashboards) và SNS alerts cho cả backend và frontend delivery.
-- Cấu hình ECS Auto Scaling dựa trên CPU utilization để tối ưu chi phí và hiệu suất.
-- Bổ sung checklist vận hành và cleanup resources.
+| Phân loại | Công nghệ |
+|-----------|-----------|
+| Frontend | React, Vite |
+| Backend | Django, Gunicorn, Python, Docker |
+| Hạ tầng | AWS VPC, ECS Fargate, RDS MySQL, S3, CloudFront, ALB |
+| CI/CD | GitHub Actions, GitHub OIDC, AWS STS, ECR |
+| Giám sát | CloudWatch, SNS, AWS Budgets, Cost Anomaly Detection |
+| Bảo mật | IAM, Security Groups, Origin Access Control |

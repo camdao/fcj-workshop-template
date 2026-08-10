@@ -6,49 +6,89 @@ chapter: false
 pre: " <b> 5.1. </b> "
 ---
 
-## Context
+## 1. Project Introduction
 
-**NeonFoodMap** is an automated guide and digital tourism discovery platform for **Vinh Khanh Food Street, District 4, Ho Chi Minh City**. It helps visitors explore food and cultural places through a map, point-of-interest (POI) information, images, and audio guides. The experience can start by geographic location or QR code.
-
-The system serves three main groups: visitors who search for and listen to guides; local business partners who update menus and promotions; and administrators who manage POIs, content, users, and operating status. The application has a React frontend, Django backend, and MySQL database.
+**NeonFoodMap** is an automated digital tourism platform for **Vinh Khanh Food Street, District 4, Ho Chi Minh City**. It helps visitors discover culinary and cultural destinations through interactive maps, POI information, multimedia content, and audio guides accessible via location detection or QR code.
 
 **Repository:** [github.com/HaoWasabi/NeonFoodmap](https://github.com/HaoWasabi/NeonFoodmap)
 
-## Problems addressed
+**Target Users:**
+- **Visitors**: Search destinations and access audio guides
+- **Business Partners**: Update menus and promotions
+- **Administrators**: Manage content, users, and operations
 
-Food and tourism businesses often have scattered place information, menus, and media. This takes significant effort to operate and is difficult to scale for many visitors. The infrastructure can also have security risks, such as exposing a database or access key. Manual deployment takes time and lacks immediate cost and incident controls.
+**Technology:**
+- Frontend: React SPA
+- Backend: Django REST API
+- Database: MySQL
 
-**NeonFoodMap** solves these issues by turning content into one central multimedia experience, using secure multi-AZ AWS infrastructure, GitHub OIDC automated CI/CD, and operational monitoring.
+## 2. Problem & Solution
 
-## High-level architecture
+### Current Challenges
 
-The system uses a multi-tier design in a VPC across two Availability Zones for high availability:
+**Business Operations:**
+- **Fragmented Information**: Location data, menus, images, and audio content are scattered across multiple platforms and systems, making it difficult to maintain consistency and provide a unified experience
+- **High Operational Costs**: Manual content management and updates require significant time and human resources
+- **Limited Scalability**: Existing systems struggle to handle large volumes of visitors efficiently, especially during peak tourism seasons
+- **Inconsistent Experience**: Visitors receive different quality of information depending on access channels
 
-* **Frontend:** React SPA stored as an S3 static website and delivered through Amazon CloudFront.
-* **Backend:** Django/Gunicorn runs on Amazon ECS Fargate in private subnets. It scales task count based on demand and sits behind an Application Load Balancer.
-* **Data:** MySQL runs on RDS in private database subnets. S3 stores frontend files, media, audio, and logs in separate buckets.
-* **Security and operations:** IAM and CloudFormation manage permissions and infrastructure. CloudWatch collects logs and metrics; Amazon SNS, AWS Budgets, and Cost Anomaly Detection provide alerts and cost monitoring.
-* **CI/CD:** GitHub Actions authenticates with OIDC/AWS STS, builds and pushes Docker images to Amazon ECR, and updates the ECS service.
+**Technical Infrastructure:**
+- **Security Vulnerabilities**: Exposed databases, hardcoded credentials, and lack of proper access controls create significant security risks
+- **Manual Deployment**: Time-consuming manual deployment processes lead to slower release cycles and higher risk of human error
+- **No Monitoring**: Lack of proper logging, metrics, and alerting makes it difficult to identify and resolve issues quickly
+- **Cost Visibility**: No clear tracking of infrastructure costs or mechanisms to prevent budget overruns
 
-![Overall platform architecture on AWS](images/platform_architecture.jpg)
+### Solution Approach
 
-## Technology stack
+NeonFoodMap addresses these challenges through a modern cloud-native architecture:
 
-| Layer | Technology/services | Role in NeonFoodMap |
-| --- | --- | --- |
-| Frontend | React, Vite, Nginx, Docker | Builds the SPA, creates assets, and serves the web application |
-| Backend | Django, Gunicorn, Python, Docker | Provides APIs, business logic, database access, and S3 access |
-| Network | Amazon VPC, public/private subnets, Internet Gateway, NAT Gateway, Application Load Balancer | Separates network layers, provides required Internet access, and routes application requests |
-| Database | Amazon RDS MySQL | Stores business data with private access, backups, encryption, and a multi-AZ configuration where needed |
-| Storage/CDN | Amazon S3, Amazon CloudFront, Origin Access Control | Stores frontend files, media, audio, and logs, and delivers static content securely |
-| Containers | Amazon ECR, Amazon ECS Fargate | Stores Docker images and runs frontend/backend containers |
-| CI/CD | GitHub Actions, GitHub OIDC, AWS STS, IAM Role | Tests, builds, pushes images, and deploys without long-lived AWS keys |
-| Monitoring/cost | Amazon CloudWatch, Amazon SNS, AWS Budgets, Cost Anomaly Detection | Collects logs and metrics, sends technical alerts, and tracks costs |
+**Centralized Platform:**
+- Single unified platform for all POI content, media, and audio guides
+- Consistent API and data model for all user interfaces
+- Streamlined content management for business partners
 
-## Results achieved
+**Secure AWS Infrastructure:**
+- Multi-AZ VPC deployment for high availability and fault tolerance
+- Private subnets for databases and backend services
+- IAM roles and security groups following least-privilege principle
+- Encryption at rest and in transit
 
-- Completed an AWS platform with a multi-AZ VPC, private RDS MySQL, S3, IAM, and cost monitoring.
-- Packaged frontend and backend with Docker, managed images in Amazon ECR, and tested images before deployment.
-- Deployed ECS Fargate behind ALB and target groups; checked frontend–backend connectivity, health checks, logs, and configuration errors in CloudWatch.
-- Automated build, push, and deployment with GitHub Actions and OIDC; monitored ECS rollouts after each update.
-- Completed CloudFront delivery, tested the main application flows, and added operations and cleanup checklists.
+**Automated CI/CD:**
+- GitHub Actions workflows for automated testing and deployment
+- OIDC authentication eliminates long-lived AWS credentials
+- Zero-downtime rolling updates for backend services
+- Automated CloudFront cache invalidation for frontend updates
+
+**Comprehensive Monitoring:**
+- CloudWatch logs and metrics for all components
+- SNS email alerts for critical issues and anomalies
+- AWS Budgets and Cost Anomaly Detection for financial governance
+- Dashboards for real-time system health visibility
+
+## 3. Architecture Overview
+
+![Overall Platform Architecture on AWS](images/platform_architecture.jpg)
+
+The system uses a **multi-tier architecture** in Amazon VPC across two Availability Zones in `ap-southeast-1`:
+
+**Architecture Layers:**
+
+| Layer | Components | Purpose |
+|-------|-----------|---------|
+| **Presentation** | CloudFront, S3 | Deliver React SPA globally with low latency |
+| **Application** | ALB, ECS Fargate | Run Django API containers with auto-scaling |
+| **Data** | RDS MySQL, S3 | Store business data and media files securely |
+| **Network** | VPC, Subnets, Gateways | Isolate and route traffic securely |
+| **CI/CD** | GitHub Actions, OIDC, ECR | Automate build and deployment |
+| **Monitoring** | CloudWatch, SNS | Track metrics, logs, and send alerts |
+
+## 4. Technology Stack
+
+| Category | Technologies |
+|----------|-------------|
+| Frontend | React, Vite |
+| Backend | Django, Gunicorn, Python, Docker |
+| Infrastructure | AWS VPC, ECS Fargate, RDS MySQL, S3, CloudFront, ALB |
+| CI/CD | GitHub Actions, GitHub OIDC, AWS STS, ECR |
+| Monitoring | CloudWatch, SNS, AWS Budgets, Cost Anomaly Detection |
+| Security | IAM, Security Groups, Origin Access Control |
