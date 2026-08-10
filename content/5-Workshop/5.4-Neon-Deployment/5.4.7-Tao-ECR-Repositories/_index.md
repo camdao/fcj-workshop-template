@@ -1,12 +1,12 @@
 ---
-title : "Create ECR Repositories"
+title : "Create ECR Repository"
 date : 2024-01-01
 weight : 7
 chapter : false
 pre : " <b> 5.4.7. </b> "
 ---
 
-Amazon Elastic Container Registry (ECR) is a managed Docker container registry. The architecture requires two distinct repositories to store images for the Backend and Frontend services.
+Amazon Elastic Container Registry (ECR) is a managed Docker container registry. The project requires a repository to store the Backend Django image.
 
 ---
 
@@ -20,14 +20,14 @@ cd aws_04_deploy
 .\01_create_ecr_repos.ps1
 ```
 
-![Executing ECR Repositories creation script](/images/5-Workshop/5.3-Neon-Infracstructure/image084.png)
+![Executing ECR Repository creation script](/images/5-Workshop/5.3-Neon-Infracstructure/image084.png)
 
-Expected output displaying URI for each repository:
+Expected output displaying URI for the repository:
 
-![ECR Repositories creation result](/images/5-Workshop/5.3-Neon-Infracstructure/image085.png)
+![ECR Repository creation result](/images/5-Workshop/5.3-Neon-Infracstructure/image085.png)
 
 #### Method 2: Execution via AWS CLI or Management Console
-Execute the following CLI commands (requires configured AWS credentials):
+Execute the following CLI command (requires configured AWS credentials):
 
 ```bash
 # Provision Backend Repository
@@ -35,14 +35,8 @@ aws ecr create-repository \
   --repository-name neonfoodmap-backend \
   --region ap-southeast-1 \
   --image-scanning-configuration scanOnPush=true \
-  --encryption-configuration encryptionType=AES256
-
-# Provision Frontend Repository
-aws ecr create-repository \
-  --repository-name neonfoodmap-frontend \
-  --region ap-southeast-1 \
-  --image-scanning-configuration scanOnPush=true \
-  --encryption-configuration encryptionType=AES256
+  --encryption-configuration encryptionType=AES256 \
+  --tags Key=Project,Value=NeonFoodmap
 ```
 
 ![Manual ECR Repository creation via AWS Console](/images/5-Workshop/5.3-Neon-Infracstructure/image086.png)
@@ -51,7 +45,7 @@ aws ecr create-repository \
 
 ### 5.4.7.2. ECR Security Compliance Standards
 
-Both container repositories are configured with enterprise security controls:
+The container repository is configured with enterprise security controls:
 
 | Feature | Configuration | Security Benefit |
 | :--- | :--- | :--- |
@@ -67,6 +61,8 @@ Execute the CLI command below to verify repository creation:
 
 ```bash
 aws ecr describe-repositories \
-  --repository-names neonfoodmap-backend neonfoodmap-frontend \
+  --repository-names neonfoodmap-backend \
   --region ap-southeast-1
 ```
+
+The output will display repository details including the `repositoryUri` - the address used to push/pull Docker images.

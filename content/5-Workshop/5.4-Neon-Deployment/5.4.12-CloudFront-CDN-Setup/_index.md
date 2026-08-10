@@ -1,12 +1,12 @@
 ---
 title : "CloudFront + CDN Setup"
 date : 2024-01-01
-weight : 2
+weight : 12
 chapter : false
-pre : " <b> 5.5.2. </b> "
+pre : " <b> 5.4.12. </b> "
 ---
 
-### 5.5.2.1. Create a CloudFront Distribution
+### 5.4.12.1. Create a CloudFront Distribution
 
 Open the CloudFront console, go to **Distributions**, and select **Create distribution**. Then configure the following settings:
 
@@ -20,7 +20,7 @@ Open the CloudFront console, go to **Distributions**, and select **Create distri
 
 ![image011.png](/images/5-Workshop/5.5-Neon-Operations/image011.png)
 
-### 5.5.2.3. Configure the S3 Origin and OAC
+### 5.4.12.2. Configure the S3 Origin and OAC
 
 **Origin type:** Select **Amazon S3**.
 
@@ -36,7 +36,7 @@ Open the CloudFront console, go to **Distributions**, and select **Create distri
 
 ![image013.png](/images/5-Workshop/5.5-Neon-Operations/image013.png)
 
-### 5.5.2.4. Adjust the ALB Origin
+### 5.4.12.3. Adjust the ALB Origin
 
 After creating the distribution, open **Distributions**, select the newly created distribution, open the **Origins** tab, and edit the linked Elastic Load Balancing origin. Set *Protocol* to **HTTP only** to match the current ALB/API configuration and avoid communication issues or `400 Bad Request` responses caused by a protocol mismatch.
 
