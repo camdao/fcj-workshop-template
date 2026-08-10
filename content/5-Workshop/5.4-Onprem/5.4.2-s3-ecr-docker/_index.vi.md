@@ -47,8 +47,6 @@ Lần lượt mở từng bucket → tab **Permissions**. Tại **Block public a
 
 **Mục đích:** Tạo private repository trên Amazon ECR để lưu Docker image backend trước khi triển khai ECS Fargate.
 
-![ECR Process](images/AllStageECRTask.jpg)
-
 ### Tạo repository
 
 1. Mở PowerShell tại thư mục `aws_04_deploy` của dự án.

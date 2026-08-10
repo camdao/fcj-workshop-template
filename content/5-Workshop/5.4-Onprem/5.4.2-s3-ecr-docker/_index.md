@@ -51,8 +51,6 @@ Open each bucket's **Permissions** tab. Under **Block public access**, ensure al
 
 Create two private Amazon ECR repositories for backend and frontend Docker images before deployment to ECS Fargate.
 
-![ECR process](images/AllStageECRTask.jpg)
-
 ### Create repositories
 
 1. Open PowerShell in the project's `aws_04_deploy` folder.

@@ -7,7 +7,7 @@ pre: " <b> 4. </b> "
 ---
 
 
-During my internship, I participated in two events. Each one was a memorable experience that provided new, interesting, and useful knowledge, along with gifts and wonderful moments.
+During my internship, I participated in four events. Each one was a memorable experience that provided new, interesting, and useful knowledge, along with gifts and wonderful moments.
 
 ### [Event 1](4.1-Event1/)  
 &emsp;**Event Name:** AWS: Enterprise Cloud Architectures and Industry Application featuring Cloud Kinetics & Renova Cloud  
@@ -28,3 +28,27 @@ During my internship, I participated in two events. Each one was a memorable exp
 &emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City  
 
 &emsp;**Role:** Attendee  
+
+---
+
+### [Event 3](4.3-Event3/)  
+&emsp;**Event Name:** AWS FCAJ Agent Forge - Deepdive (Day 1)  
+
+&emsp;**Date & Time:** August 1, 2026  
+
+&emsp;**Location:** Online Workshop  
+
+&emsp;**Role:** Attendee  
+
+---
+
+### [Event 4](4.4-Event4/)  
+&emsp;**Event Name:** AWS FCAJ Agent Forge - Deepdive (Day 2)  
+
+&emsp;**Date & Time:** August 8, 2026  
+
+&emsp;**Location:** Online Workshop  
+
+&emsp;**Role:** Attendee  
+
+
