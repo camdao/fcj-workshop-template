@@ -1,5 +1,5 @@
 ---
-title : "Khởi tạo và cấu hình IAM"
+title : "Thiết lập IAM Roles"
 date : 2024-01-01
 weight : 4
 chapter : false
@@ -8,191 +8,13 @@ pre : " <b> 5.3.4. </b> "
 
 ## Tổng quan
 
-Phần này hướng dẫn thiết lập IAM cho dự án NeonFoodmap, bao gồm:
-- **IAM Users & Groups**: Quản lý quyền truy cập cho team members
-- **IAM Roles cho Services**: Cấp quyền cho ECS tasks và GitHub Actions CI/CD
+Sau khi đã tạo IAM Users & Groups bằng CloudFormation (xem [5.4.3](../../5.4-neon-deployment/5.4.3-cloudformation/)), phần này hướng dẫn tạo **IAM Roles cho Services** để ứng dụng có thể hoạt động:
 
-## Bước 1: Cấp quyền cho Admin User
+- **ECS Task Execution Role**: Pull Docker images từ ECR và ghi logs
+- **ECS Task Role**: Cho phép backend truy cập S3
+- **GitHub Actions Role**: CI/CD deployment tự động
 
-Trước khi tạo IAM resources khác, admin user cần có đủ quyền. Gắn IAM permission policy sau vào tài khoản AWS user của bạn:
-
-{{< expand title="Hiển thị IAM Policy cho Admin" >}}
-
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "CloudFormationStackManagement",
-      "Effect": "Allow",
-      "Action": [
-        "cloudformation:CreateStack",
-        "cloudformation:CreateChangeSet",
-        "cloudformation:UpdateStack",
-        "cloudformation:DeleteStack",
-        "cloudformation:DeleteChangeSet",
-        "cloudformation:DescribeChangeSet",
-        "cloudformation:DescribeStacks",
-        "cloudformation:DescribeStackEvents",
-        "cloudformation:DescribeStackResources",
-        "cloudformation:DescribeStackResource",
-        "cloudformation:ExecuteChangeSet",
-        "cloudformation:GetTemplate",
-        "cloudformation:ListStacks",
-        "cloudformation:ListStackResources",
-        "cloudformation:ValidateTemplate"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "IAMResourcesForNeonFoodmap",
-      "Effect": "Allow",
-      "Action": [
-        "iam:AddUserToGroup",
-        "iam:AttachGroupPolicy",
-        "iam:AttachRolePolicy",
-        "iam:CreateGroup",
-        "iam:CreateInstanceProfile",
-        "iam:CreateLoginProfile",
-        "iam:CreateOpenIDConnectProvider",
-        "iam:CreatePolicy",
-        "iam:CreatePolicyVersion",
-        "iam:CreateRole",
-        "iam:CreateUser",
-        "iam:DeleteGroup",
-        "iam:DeleteInstanceProfile",
-        "iam:DeleteLoginProfile",
-        "iam:DeleteOpenIDConnectProvider",
-        "iam:DeletePolicy",
-        "iam:DeletePolicyVersion",
-        "iam:DeleteRole",
-        "iam:DeleteUser",
-        "iam:DetachGroupPolicy",
-        "iam:DetachRolePolicy",
-        "iam:GetGroup",
-        "iam:GetInstanceProfile",
-        "iam:GetOpenIDConnectProvider",
-        "iam:GetPolicy",
-        "iam:GetPolicyVersion",
-        "iam:GetRole",
-        "iam:GetUser",
-        "iam:ListAttachedGroupPolicies",
-        "iam:ListAttachedRolePolicies",
-        "iam:ListGroups",
-        "iam:ListGroupsForUser",
-        "iam:ListInstanceProfilesForRole",
-        "iam:ListOpenIDConnectProviders",
-        "iam:ListPolicies",
-        "iam:ListPolicyTags",
-        "iam:ListPolicyVersions",
-        "iam:ListRoleTags",
-        "iam:ListRoles",
-        "iam:ListUserTags",
-        "iam:ListUsers",
-        "iam:PassRole",
-        "iam:PutGroupPolicy",
-        "iam:PutRolePolicy",
-        "iam:RemoveRoleFromInstanceProfile",
-        "iam:RemoveUserFromGroup",
-        "iam:SetDefaultPolicyVersion",
-        "iam:TagGroup",
-        "iam:TagOpenIDConnectProvider",
-        "iam:TagPolicy",
-        "iam:TagRole",
-        "iam:TagUser",
-        "iam:UntagGroup",
-        "iam:UntagOpenIDConnectProvider",
-        "iam:UntagPolicy",
-        "iam:UntagRole",
-        "iam:UntagUser",
-        "iam:UpdateAssumeRolePolicy",
-        "iam:UpdateLoginProfile",
-        "iam:UpdateOpenIDConnectProviderThumbprint",
-        "iam:UpdateRole",
-        "iam:UpdateUser"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "SNSBudgetAndCostAnomalyResources",
-      "Effect": "Allow",
-      "Action": [
-        "sns:CreateTopic",
-        "sns:DeleteTopic",
-        "sns:GetTopicAttributes",
-        "sns:ListSubscriptionsByTopic",
-        "sns:ListTagsForResource",
-        "sns:ListTopics",
-        "sns:SetTopicAttributes",
-        "sns:Subscribe",
-        "sns:TagResource",
-        "sns:Unsubscribe",
-        "sns:UntagResource",
-        "budgets:CreateBudget",
-        "budgets:ModifyBudget",
-        "budgets:DeleteBudget",
-        "budgets:DescribeBudget",
-        "budgets:DescribeBudgets",
-        "budgets:CreateNotification",
-        "budgets:DeleteNotification",
-        "budgets:DescribeNotificationsForBudget",
-        "budgets:CreateSubscriber",
-        "budgets:DeleteSubscriber",
-        "budgets:DescribeSubscribersForNotification",
-        "ce:CreateAnomalyMonitor",
-        "ce:CreateAnomalySubscription",
-        "ce:DeleteAnomalyMonitor",
-        "ce:DeleteAnomalySubscription",
-        "ce:GetAnomalyMonitors",
-        "ce:GetAnomalySubscriptions",
-        "ce:UpdateAnomalyMonitor",
-        "ce:UpdateAnomalySubscription"
-      ],
-      "Resource": "*"
-    }
-  ]
-}
-```
-
-{{< /expand >}}
-
-## Bước 2: Tạo IAM Users & Groups bằng CloudFormation
-
-### 2.1. Tạo CloudFormation Stack
-
-Từ CloudFormation Console:
-1. Chọn **Create stack** → **Upload a template file**
-2. Tải file `neonfoodmap-iam-setup.yaml`
-3. Nhập parameters:
-   - Tên dự án
-   - Mật khẩu cho các thành viên
-   - Ngân sách tháng
-   - Email nhận cảnh báo
-4. Xác nhận quyền tạo IAM resources
-5. Tạo stack
-
-![Cloudformation Template](images/picCloudformation.jpg)
-
-![Complete Status Cloudformation](images/picCompleteStatus.jpg)
-
-### 2.2. IAM Groups được tạo
-
-Template CloudFormation tạo ba nhóm với quyền hạn khác nhau:
-
-| **Group** | **Vai trò** | **Quyền chính** |
-|-----------|-------------|-----------------|
-| `NeonFoodmap-DevOps-Admins` | Quản lý infrastructure | ECS, RDS, VPC, Networking, CloudFormation |
-| `NeonFoodmap-Backend-Devs` | Phát triển backend | ECS, ECR, RDS read-only, CloudWatch logs |
-| `NeonFoodmap-Frontend-Devs` | Phát triển frontend | S3, CloudFront invalidation |
-
-**Lưu ý quan trọng:**
-- Mọi thành viên **phải bật MFA** để sử dụng các dịch vụ được cấp quyền
-- Policy **Force MFA** được áp dụng tự động
-- Frontend developers không cần quyền ECS/ECR vì frontend là static assets deploy lên S3
-
-## Bước 3: Tạo IAM Roles cho Services
-
-### 3.1. IAM Role cho ECS Task Execution
+## 5.3.4.1. IAM Role cho ECS Task Execution
 
 Role này cho phép ECS pull Docker images từ ECR và ghi logs vào CloudWatch.
 
@@ -209,7 +31,7 @@ Role này cho phép ECS pull Docker images từ ECR và ghi logs vào CloudWatch
 ![Hình 114.](/images/5-Workshop/5.3-Neon-Infracstructure/image114.png)
 ![Hình 115.](/images/5-Workshop/5.3-Neon-Infracstructure/image115.png)
 
-### 3.2. IAM Role cho ECS Task (Backend Application)
+## 5.3.4.2. IAM Role cho ECS Task (Backend Application)
 
 Role này cho phép Django backend truy cập S3 để lưu/đọc media files.
 
@@ -254,11 +76,11 @@ Role này cho phép Django backend truy cập S3 để lưu/đọc media files.
 ![Hình 129.](/images/5-Workshop/5.3-Neon-Infracstructure/image129.png)
 ![Hình 131.](/images/5-Workshop/5.3-Neon-Infracstructure/image131.png)
 
-### 3.3. GitHub OIDC Provider và IAM Role cho CI/CD
+## 5.3.4.3. GitHub OIDC Provider và IAM Role cho CI/CD
 
 Thiết lập này cho phép GitHub Actions deploy ứng dụng mà không cần lưu AWS access keys trong GitHub Secrets.
 
-**Bước 3.3.1: Tạo OIDC Identity Provider**
+### Bước 1: Tạo OIDC Identity Provider
 
 1. Vào **IAM Console** → **Access management** → **Identity providers**
 2. Chọn **Add provider**
@@ -273,7 +95,7 @@ Thiết lập này cho phép GitHub Actions deploy ứng dụng mà không cần
 ![Hình 137.](/images/5-Workshop/5.3-Neon-Infracstructure/image137.png)
 ![Hình 139.](/images/5-Workshop/5.3-Neon-Infracstructure/image139.png)
 
-**Bước 3.3.2: Tạo IAM Role cho GitHub Actions**
+### Bước 2: Tạo IAM Role cho GitHub Actions
 
 1. Vào **IAM Console** → **Roles** → **Create role**
 2. Chọn **Web identity**
@@ -289,9 +111,9 @@ Thiết lập này cho phép GitHub Actions deploy ứng dụng mà không cần
 ![Hình 145.](/images/5-Workshop/5.3-Neon-Infracstructure/image145.png)
 ![Hình 149.](/images/5-Workshop/5.3-Neon-Infracstructure/image149.png)
 
-**Bước 3.3.3: Cấu hình Trust Policy**
+### Bước 3: Cấu hình Trust Policy
 
-Sau khi tạo role, cần chỉnh sửa Trust Policy để chỉ cho phép repository và branch cụ thể:
+Sau khi tạo role, chỉnh sửa Trust Policy để chỉ cho phép repository và branch cụ thể:
 
 ```json
 {
@@ -326,6 +148,6 @@ Sau khi tạo role, cần chỉnh sửa Trust Policy để chỉ cho phép repos
 
 | **Role** | **Mục đích** | **Được sử dụng bởi** |
 |----------|--------------|---------------------|
-| `NeonFoodmap-TaskExecution-Role` | Pull images, ghi logs | ECS Task Definition (executionRoleArn) |
+| `NeonFoodmap-TaskExecution-Role` | Pull Docker images, ghi logs | ECS Task Definition (executionRoleArn) |
 | `NeonFoodmap-ECS-Backend-Role` | Truy cập S3 cho media files | ECS Task Definition (taskRoleArn) |
-| `NeonFoodmap-GitHub-Actions-Role` | CI/CD deployment | GitHub Actions workflows |
+| `NeonFoodmap-GitHub-Actions-Role` | CI/CD deployment tự động | GitHub Actions workflows |
