@@ -27,15 +27,7 @@ NeonFoodMap dùng kiến trúc **multi-tier** trong Amazon VPC tại `ap-southea
 
 ![Kiến trúc tổng thể nền tảng trên AWS](images/platform_architecture.jpg)
 
-### Kiến trúc kết nối dịch vụ
-
-![Kiến trúc kết nối dịch vụ trên AWS](images/edge_architecture.jpg)
-
-- Người dùng truy cập frontend React SPA qua **CloudFront** từ S3; các request API từ client đi qua **Application Load Balancer (ALB)**.
-- ALB nhận HTTP/HTTPS, thực hiện health check và chuyển request API đến Backend Service chạy trên ECS Fargate.
-- ECS task chỉ nằm trong private subnet, kết nối với RDS MySQL để xử lý dữ liệu và S3 để lưu trữ media/audio.
-
-### Năm lớp kiến trúc
+### Các lớp kiến trúc
 
 | Lớp | Thành phần | Vai trò chính |
 | --- | --- | --- |

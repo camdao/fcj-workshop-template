@@ -23,6 +23,5 @@ Các dịch vụ chính được sử dụng gồm:
 2. [Các bước chuẩn bị](5.2-Prerequiste/)
 3. [Kiến trúc hệ thống](5.3-Structure/)
 4. [Các bước triển khai](5.4-Onprem/)
-5. [Xác minh triển khai và giám sát hệ thống](5.5-Policy/)
-6. [Tổng quan giao diện và chức năng ứng dụng](5.6-Project-Visual/)
-7. [Dọn dẹp tài nguyên](5.7-Cleanup/)
+5. [Tổng quan giao diện và chức năng ứng dụng](5.5-Project-Visual/)
+6. [Dọn dẹp tài nguyên](5.6-Cleanup/)
