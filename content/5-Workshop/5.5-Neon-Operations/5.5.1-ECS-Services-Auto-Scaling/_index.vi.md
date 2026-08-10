@@ -21,19 +21,11 @@ pre : " <b> 5.5.1. </b> "
 
 ![image041](/images/5-Workshop/5.4-Neon-Deployment/image041.png)
 
-5. Kiểm tra cấu hình, chọn **Create**. ECS sẽ tự tạo task, đăng ký IP task vào frontend target group và Cloud Map.
+5. Kiểm tra cấu hình, chọn **Create**. ECS sẽ tự tạo task, đăng ký IP task vào backend target group và Cloud Map.
 
 ![image042](/images/5-Workshop/5.4-Neon-Deployment/image042.png)
 
-### 5.5.1.2. Tạo Frontend Service
-
-Lặp lại quy trình tạo service cho frontend: chọn task definition `neonfoodmap-task-fe`, service name `svc-neonfoodmap-fe`, private subnet và ECS task security group. **Load balancing**, chọn `ALB-NeonFoodMap`, listener `80:HTTP`, container backend port `8000` và target group `TG-NeonFoodMap-BE`.
-
-Sau khi tạo, ECS thực hiện rolling deployment. Trong thời gian này, giữ task đủ `Healthy` để ALB không chuyển request vào task chưa sẵn sàng.
-
-![image043](/images/5-Workshop/5.4-Neon-Deployment/image043.png)
-
-### 5.5.1.3. Bật Auto Scaling và CPU Policy
+### 5.5.1.2. Bật Auto Scaling và CPU Policy
 
 1. Mở service `svc-neonfoodmap-be`, vào tab **Service auto scaling** và chọn **Update**.
 2. Bật **Use service auto scaling**. Trong phần *Capacity limits*, đặt số task tối thiểu là `2` và tối đa là `6`. Nhờ đó backend luôn có hai task sẵn sàng nhận request, nhưng chỉ được mở rộng tối đa sáu task để kiểm soát chi phí.

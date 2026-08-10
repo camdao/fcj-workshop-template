@@ -30,5 +30,5 @@ Sau khi hoàn thành các bước trên, hệ thống đã sẵn sàng hoạt đ
 - Code được kiểm thử bằng CI
 - Image được build và push lên ECR
 - ECS service chạy bằng Fargate
-- ALB phân phối traffic đến frontend và backend đúng route
+- ALB phân phối traffic đến backend services
 - Smoke test xác nhận hệ thống có thể đáp ứng request cơ bản

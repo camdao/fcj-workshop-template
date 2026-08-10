@@ -30,5 +30,5 @@ After completing the above steps, the system is ready to operate in a production
 - Code is tested via CI
 - Images are built and pushed to ECR
 - ECS service runs on Fargate
-- ALB distributes traffic to frontend and backend on the correct routes
+- ALB distributes traffic to backend services
 - Smoke tests confirm the system can handle basic requests

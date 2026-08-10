@@ -1,40 +1,25 @@
 ---
 title: "Workshop"
-date: 2024-01-01
+date: 2026-08-04
 weight: 5
 chapter: false
 pre: " <b> 5. </b> "
 ---
 
-# DevOps on AWS with NeonFoodmap - Foodmap Website
+## Workshop: Triển khai NeonFoodMap trên AWS
 
-### Tổng quan
+Workshop này hướng dẫn triển khai **NeonFoodMap** — nền tảng khám phá ẩm thực và du lịch số — trên AWS. Ứng dụng gồm React frontend, Django backend, cơ sở dữ liệu MySQL, dữ liệu điểm đến (POI), thuyết minh âm thanh, tour và thanh toán sandbox.
 
-Workshop này hướng dẫn toàn bộ quy trình xây dựng, triển khai và vận hành **NeonFoodMap** - ứng dụng bản đồ ẩm thực và du lịch - trên nền tảng Amazon Web Services (AWS). Dự án áp dụng mô hình Cloud & DevOps hiện đại với pipeline CI/CD tự động hoàn toàn, khả năng sẵn sàng cao theo Multi-AZ, và hệ thống giám sát toàn diện.
+Hạ tầng được thiết kế và vận hành tại Region **Asia Pacific (Singapore) — `ap-southeast-1`** theo mô hình VPC đa Availability Zone. Nội dung đi từ thiết kế hạ tầng, quản lý quyền, đóng gói ứng dụng đến triển khai, giám sát và dọn dẹp tài nguyên.
 
-Workshop được chia thành bốn giai đoạn chính:
+Các dịch vụ chính được sử dụng gồm:
 
-- **Hạ tầng**: Thiết lập mạng và các dịch vụ AWS nền tảng (VPC, RDS, S3, IAM)
-- **Triển khai**: Xây dựng pipeline CI/CD bằng GitHub Actions và triển khai ứng dụng lên ECS Fargate
-- **Vận hành**: Cấu hình auto-scaling, phân phối CDN, giám sát, cảnh báo chi phí và kiểm thử end-to-end
-- **Hình ảnh minh họa**: Danh sách tham chiếu toàn bộ ảnh chụp màn hình sử dụng trong workshop
+* **Compute & delivery** — Amazon ECS Fargate và Application Load Balancer chạy Django backend dạng container; Amazon S3 và CloudFront phân phối React SPA cùng tài nguyên tĩnh.
+* **Dữ liệu, bảo mật & CI/CD** — Amazon RDS MySQL lưu dữ liệu nghiệp vụ; GitHub Actions xác thực qua OIDC/AWS STS để triển khai không cần access key dài hạn; CloudWatch hỗ trợ theo dõi log, metric và cảnh báo.
 
-### Tổng quan kiến trúc
+## Nội dung
 
-Hệ thống được tổ chức theo năm lớp chính:
-
-| Lớp | Thành phần |
-|-----|-----------|
-| CI/CD | GitHub Actions, OIDC, AWS STS, Amazon ECR |
-| Presentation | Amazon CloudFront, Amazon S3 (Frontend) |
-| Application | Application Load Balancer, Amazon ECS Fargate |
-| Data | Amazon RDS MySQL (Multi-AZ) |
-| Monitoring | Amazon CloudWatch, Amazon SNS, AWS Budgets |
-
-### Nội dung
-
-1. [Tổng quan Workshop](5.1-Workshop-overview/)
-2. [Chuẩn bị](5.2-Prerequiste/)
-3. [Thiết kế và xây dựng hạ tầng NeonFoodMap trên AWS](5.3-Neon-Infrastructure/)
-4. [Triển khai NeonFoodMap trên AWS](5.4-Neon-Deployment/)
-5. [Kiểm thử, vận hành và triển khai liên tục](5.5-Neon-Operations/)
+1. [Tổng quan workshop](5.1-Workshop-overview/)
+2. [Hạ tầng Neon](5.3-Neon-Infrastructure/)
+3. [Triển khai Neon](5.4-Neon-Deployment/)
+4. [Vận hành Neon](5.5-Neon-Operations/)
