@@ -1,6 +1,6 @@
 ---
 title: "Week 7 Worklog"
-date: 2024-01-01
+date: 2024-02-12
 weight: 7
 chapter: false
 pre: " <b> 1.7. </b> "
@@ -8,75 +8,72 @@ pre: " <b> 1.7. </b> "
 
 ### Week 7 Objectives:
 
-* Master AWS CloudFormation for Infrastructure as Code.
-* Understand template structure and resource management.
-* Learn stack operations and change sets.
-* Practice automating infrastructure deployment.
+* Build and configure CI/CD pipeline for automated deployments.
+* Deploy CloudFront CDN for frontend content delivery.
+* Implement Infrastructure as Code with CloudFormation.
+* Create comprehensive documentation and runbooks.
+* Finalize deployment automation.
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Learn CloudFormation Fundamentals: <br>&emsp; + Infrastructure as Code concepts <br>&emsp; + Template anatomy (YAML/JSON) <br>&emsp; + Resources, parameters, outputs <br>&emsp; + Intrinsic functions | 07/23/2026 | 07/23/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 3   | - Learn Stack Management: <br>&emsp; + Creating and updating stacks <br>&emsp; + Change sets <br>&emsp; + Stack policies <br>&emsp; + Drift detection                                                 | 07/24/2026 | 07/24/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - **Practice:** <br>&emsp; + Write CloudFormation templates <br>&emsp; + Create stacks from templates <br>&emsp; + Use parameters and mappings <br>&emsp; + Configure outputs                         | 07/25/2026 | 07/25/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn Advanced Features: <br>&emsp; + Nested stacks <br>&emsp; + Cross-stack references <br>&emsp; + Custom resources <br>&emsp; + StackSets for multi-account/region                              | 07/26/2026 | 07/26/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Create nested stacks <br>&emsp; + Implement cross-stack references <br>&emsp; + Use change sets <br>&emsp; + Deploy multi-tier application                               | 07/27/2026 | 07/27/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| Day | Task                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
+| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | --------------- | ----------------------------------------- |
+| 1   | - Set up CI/CD pipeline: <br>&emsp; + Configure GitHub Actions workflow <br>&emsp; + Set up build and test stages <br>&emsp; + Configure deployment stages <br>&emsp; + Add approval gates | 07/23/2026 | 07/23/2026      | <https://docs.github.com/actions> |
+| 2   | - Implement automated testing in pipeline: <br>&emsp; + Unit tests <br>&emsp; + Integration tests <br>&emsp; + Security scans <br>&emsp; + Code quality checks | 07/24/2026 | 07/24/2026      | CI/CD best practices |
+| 3   | - Deploy CloudFront CDN: <br>&emsp; + Create CloudFront distribution <br>&emsp; + Configure S3 as origin <br>&emsp; + Set up SSL certificate <br>&emsp; + Configure caching policies <br>&emsp; + Add custom domain | 07/25/2026 | 07/25/2026      | <https://000011.awsstudygroup.com/> |
+| 4   | - Infrastructure as Code: <br>&emsp; + Write CloudFormation templates <br>&emsp; + Parameterize templates <br>&emsp; + Create stacks for all resources <br>&emsp; + Version control IaC | 07/26/2026 | 07/26/2026      | <https://000040.awsstudygroup.com/> |
+| 5   | - Documentation and runbooks: <br>&emsp; + Architecture documentation <br>&emsp; + Deployment procedures <br>&emsp; + Troubleshooting guides <br>&emsp; + Operational runbooks | 07/27/2026 | 07/27/2026      | Documentation standards |
 
 
 ### Week 7 Achievements:
 
-* Mastered Infrastructure as Code concepts:
-  * Understanding benefits of IaC (version control, repeatability, automation)
-  * CloudFormation vs. other IaC tools
-  * Declarative vs. imperative approaches
-  * Template-driven infrastructure management
+* **CI/CD Pipeline Implementation:**
+  * Built complete GitHub Actions pipeline
+  * Configured multi-stage workflow (build, test, deploy)
+  * Implemented automated testing at each stage
+  * Added manual approval gates for production
+  * Integrated with ECR and ECS for deployments
+  * Set up rollback mechanisms
+  * Achieved zero-downtime deployments
 
-* Learned CloudFormation template structure:
-  * YAML and JSON syntax
-  * Template sections (Parameters, Resources, Outputs, Mappings, Conditions)
-  * Resource declaration and properties
-  * Intrinsic functions (Ref, GetAtt, Sub, Join, Select)
+* **Automated Testing in Pipeline:**
+  * Integrated unit tests with coverage reporting
+  * Added integration tests for all APIs
+  * Configured security scanning (SAST/DAST)
+  * Implemented code quality gates (linting, formatting)
+  * Set up container vulnerability scanning
+  * Added performance regression tests
 
-* Successfully created CloudFormation templates:
-  * Wrote templates for VPC, subnets, and security groups
-  * Created templates for EC2 instances with user data
-  * Defined S3 buckets, IAM roles, and policies
-  * Used parameters for reusable templates
+* **CloudFront CDN Deployment:**
+  * Created CloudFront distribution for S3 frontend
+  * Configured SSL/TLS with ACM certificate
+  * Set up custom domain with Route 53
+  * Optimized caching policies for performance
+  * Configured cache invalidation on deployments
+  * Enabled compression and HTTP/2
+  * Achieved global content delivery with low latency
 
-* Understood stack operations:
-  * Creating stacks from templates
-  * Updating stacks with change sets
-  * Rolling back failed updates
-  * Deleting stacks and resource cleanup
+* **Infrastructure as Code:**
+  * Created comprehensive CloudFormation templates
+  * Modularized infrastructure into nested stacks
+  * Parameterized for multi-environment deployment
+  * Version controlled all IaC in Git
+  * Documented stack dependencies
+  * Implemented change sets for safe updates
+  * Can now recreate entire infrastructure from code
 
-* Learned change management:
-  * Change sets for previewing updates
-  * Stack policies for protecting resources
-  * Drift detection for configuration compliance
-  * Update behaviors (No Interrupt, Some Interrupt, Replacement)
+* **Documentation & Runbooks:**
+  * Completed architecture documentation with diagrams
+  * Wrote deployment procedures and checklists
+  * Created troubleshooting guides for common issues
+  * Documented operational procedures
+  * Created runbooks for incident response
+  * Documented disaster recovery procedures
+  * Set up knowledge base for team
 
-* Mastered CloudFormation features:
-  * Conditions for conditional resource creation
-  * Mappings for environment-specific values
-  * Outputs for exporting values
-  * DependsOn for explicit resource dependencies
-
-* Successfully implemented advanced patterns:
-  * Nested stacks for modular templates
-  * Cross-stack references with exports/imports
-  * Custom resources with Lambda
-  * Stack termination protection
-
-* Gained practical experience with:
-  * Version controlling CloudFormation templates
-  * Automating infrastructure deployment
-  * Managing multiple environments (dev, staging, prod)
-  * Troubleshooting stack creation failures
-
-* Understood CloudFormation best practices:
-  * Organizing templates for reusability
-  * Parameter validation and constraints
-  * Using AWS Systems Manager Parameter Store
-  * Cost estimation before deployment
-
-* Built foundational knowledge for advanced IaC concepts, CI/CD integration, and multi-account/multi-region deployments with StackSets.
+* **Key Deliverables:**
+  * Fully automated CI/CD pipeline
+  * CloudFront CDN serving frontend globally
+  * Complete Infrastructure as Code
+  * Comprehensive documentation
+  * Operational runbooks
+  * Ready for final review and optimization in Week 8

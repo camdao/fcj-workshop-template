@@ -1,6 +1,6 @@
 ---
 title: "Worklog Tuần 3"
-date: 2024-01-01
+date: 2024-01-15
 weight: 3
 chapter: false
 pre: " <b> 1.3. </b> "
@@ -8,63 +8,48 @@ pre: " <b> 1.3. </b> "
 
 ### Mục tiêu tuần 3:
 
-* Nắm vững kiến thức cơ bản về VPC (Virtual Private Cloud) và các khái niệm về mạng.
-* Hiểu về subnets, route tables và internet gateways.
-* Tìm hiểu về Network ACLs và bảo mật VPC.
-* Thực hành xây dựng kiến trúc mạng an toàn.
+* Thành thạo Amazon S3 cho object storage và static website hosting.
+* Hiểu S3 versioning, lifecycle policies và các tính năng bảo mật.
+* Học Amazon RDS để quản lý relational database (PostgreSQL/MySQL).
+* Hiểu Amazon DynamoDB cho yêu cầu NoSQL database.
+* Triển khai chiến lược backup và disaster recovery.
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Tìm hiểu VPC Fundamentals: <br>&emsp; + Khái niệm và thành phần VPC <br>&emsp; + CIDR blocks và địa chỉ IP <br>&emsp; + Default vs. Custom VPC <br>&emsp; + Giới hạn và quota của VPC  | 25/06/2026   | 25/06/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 3   | - Tìm hiểu Subnets & Route Tables: <br>&emsp; + Public vs. Private subnets <br>&emsp; + Cấu hình route table <br>&emsp; + Internet Gateway (IGW) <br>&emsp; + NAT Gateway vs. NAT Instance | 26/06/2026   | 26/06/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - **Thực hành:** <br>&emsp; + Tạo custom VPC <br>&emsp; + Cấu hình subnets qua các AZs <br>&emsp; + Thiết lập route tables <br>&emsp; + Gắn Internet Gateway                              | 27/06/2026   | 27/06/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu VPC Security: <br>&emsp; + Network ACLs (NACLs) <br>&emsp; + Security Groups vs. NACLs <br>&emsp; + VPC Flow Logs <br>&emsp; + Best practices cho network security              | 28/06/2026   | 28/06/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Cấu hình Network ACLs <br>&emsp; + Thiết lập VPC Flow Logs <br>&emsp; + Triển khai kiến trúc multi-tier <br>&emsp; + Kiểm tra connectivity và security      | 29/06/2026   | 29/06/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 1   | - Học S3 cơ bản: <br>&emsp; + Buckets và objects <br>&emsp; + Storage classes (Standard, IA, Glacier) <br>&emsp; + S3 security (bucket policies, ACLs) <br>&emsp; + Static website hosting <br> - **Thực hành:** <br>&emsp; + Tạo S3 buckets <br>&emsp; + Upload objects <br>&emsp; + Cấu hình bucket policies <br>&emsp; + Host static website | 25/06/2026   | 25/06/2026      | <https://000009.awsstudygroup.com/> |
+| 2   | - Học S3 tính năng nâng cao: <br>&emsp; + Versioning <br>&emsp; + Lifecycle policies <br>&emsp; + Cross-region replication <br>&emsp; + S3 Transfer Acceleration <br> - **Thực hành:** <br>&emsp; + Bật versioning <br>&emsp; + Tạo lifecycle rules <br>&emsp; + Thiết lập replication | 26/06/2026   | 26/06/2026      | <https://000010.awsstudygroup.com/> |
+| 3   | - Học Amazon RDS: <br>&emsp; + RDS engines (PostgreSQL, MySQL, Aurora) <br>&emsp; + Multi-AZ deployments <br>&emsp; + Read replicas <br>&emsp; + Automated backups <br> - **Thực hành:** <br>&emsp; + Khởi chạy RDS instance <br>&emsp; + Cấu hình security groups <br>&emsp; + Kết nối từ EC2 <br>&emsp; + Tạo snapshots | 27/06/2026   | 27/06/2026      | <https://000024.awsstudygroup.com/> |
+| 4   | - Học DynamoDB: <br>&emsp; + Tables, items, attributes <br>&emsp; + Primary keys (partition & sort) <br>&emsp; + Indexes (GSI, LSI) <br>&emsp; + Read/write capacity modes <br> - **Thực hành:** <br>&emsp; + Tạo DynamoDB table <br>&emsp; + Put/get items <br>&emsp; + Tạo GSI <br>&emsp; + Test queries | 28/06/2026   | 28/06/2026      | <https://000025.awsstudygroup.com/> |
+| 5   | - Học chiến lược backup: <br>&emsp; + RDS automated backups <br>&emsp; + Manual snapshots <br>&emsp; + DynamoDB on-demand backups <br>&emsp; + Point-in-time recovery <br> - **Thực hành:** <br>&emsp; + Cấu hình backup retention <br>&emsp; + Restore từ snapshot <br>&emsp; + Test PITR | 29/06/2026   | 29/06/2026      | <https://000026.awsstudygroup.com/> |
 
 
 ### Kết quả đạt được tuần 3:
 
-* Nắm vững kiến thức cơ bản về VPC:
-  * Hiểu các khái niệm và kiến trúc VPC
-  * Lập kế hoạch CIDR block và quản lý địa chỉ IP
-  * Các thành phần VPC và mối quan hệ giữa chúng
-  * Sự khác biệt giữa Default và Custom VPC
+* **Thành thạo Amazon S3:**
+  * Hiểu các khái niệm cơ bản và use cases của S3
+  * Thành thạo các storage classes và tối ưu hóa chi phí
+  * Triển khai security best practices
+  * Cấu hình versioning và lifecycle policies
+  * Thành công host static websites trên S3
 
-* Tìm hiểu về subnets và availability zones:
-  * Cấu hình Public subnet cho các tài nguyên hướng internet
-  * Cấu hình Private subnet cho các tài nguyên backend
-  * Triển khai Multi-AZ cho high availability
-  * Phân chia subnet và phân bổ địa chỉ
+* **Triển khai Amazon RDS:**
+  * Deploy PostgreSQL và MySQL RDS instances
+  * Cấu hình Multi-AZ cho high availability
+  * Thiết lập read replicas cho read-heavy workloads
+  * Triển khai chiến lược automated backup
+  * Kết nối applications an toàn đến RDS
 
-* Hiểu các khái niệm về routing:
-  * Tạo và liên kết route table
-  * Internet Gateway (IGW) cho kết nối internet
-  * NAT Gateway cho private subnet truy cập internet
-  * Độ ưu tiên route table và đánh giá route
+* **DynamoDB NoSQL Database:**
+  * Hiểu DynamoDB data modeling
+  * Tạo tables với primary keys phù hợp
+  * Triển khai Global Secondary Indexes
+  * Cấu hình on-demand và provisioned capacity
+  * Test query và scan operations
 
-* Nắm vững cơ chế bảo mật VPC:
-  * Network ACLs (stateless firewall)
-  * So sánh giữa Security Groups và NACLs
-  * Cấu hình inbound và outbound rules
-  * Chiến lược defense in depth
-
-* Thành công trong việc tạo và cấu hình custom VPC:
-  * Thiết kế VPC với CIDR blocks phù hợp
-  * Tạo public và private subnets qua nhiều AZs
-  * Cấu hình route tables cho các loại subnet khác nhau
-  * Gắn và cấu hình Internet Gateway
-
-* Triển khai các best practices về VPC security:
-  * Cấu hình Network ACLs cho bảo mật ở tầng subnet
-  * Thiết lập VPC Flow Logs để giám sát
-  * Triển khai least privilege access
-  * Tài liệu hóa kiến trúc mạng
-
-* Có kinh nghiệm thực tế với:
-  * Thiết kế kiến trúc multi-tier (web, app, database tiers)
-  * Kiểm tra kết nối giữa các subnets
-  * Khắc phục sự cố mạng
-  * Các khái niệm VPC peering
-
-* Xây dựng kiến thức nền tảng cho các chủ đề networking nâng cao như VPC Peering, Transit Gateway và PrivateLink.
+* **Backup & Disaster Recovery:**
+  * Triển khai chiến lược backup toàn diện
+  * Test restore procedures cho RDS và DynamoDB
+  * Cấu hình point-in-time recovery
+  * Hiểu yêu cầu RPO và RTO
+  * Sẵn sàng tích hợp storage và databases vào kiến trúc dự án

@@ -1,6 +1,6 @@
 ---
 title: "Worklog Tuần 6"
-date: 2024-01-01
+date: 2024-02-05
 weight: 6
 chapter: false
 pre: " <b> 1.6. </b> "
@@ -8,79 +8,62 @@ pre: " <b> 1.6. </b> "
 
 ### Mục tiêu tuần 6:
 
-* Nắm vững các khái niệm và loại Elastic Load Balancing (ELB).
-* Hiểu về Auto Scaling cho quản lý tài nguyên động.
-* Tìm hiểu các mẫu high availability và fault tolerance.
-* Thực hành xây dựng kiến trúc có khả năng mở rộng và bền vững.
+* Thiết lập môi trường staging cho pre-production testing.
+* Triển khai monitoring toàn diện với CloudWatch.
+* Thực hiện application và load testing.
+* Tối ưu hiệu suất ứng dụng và resource utilization.
+* Chuẩn bị cho production deployment.
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Tìm hiểu ELB Fundamentals: <br>&emsp; + Các khái niệm load balancing <br>&emsp; + Application Load Balancer (ALB) <br>&emsp; + Network Load Balancer (NLB) <br>&emsp; + Gateway Load Balancer (GWLB) | 16/07/2026   | 16/07/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 3   | - Tìm hiểu ELB Features: <br>&emsp; + Target groups <br>&emsp; + Health checks <br>&emsp; + Listener rules và routing <br>&emsp; + SSL/TLS termination                                    | 17/07/2026   | 17/07/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - **Thực hành:** <br>&emsp; + Tạo ALB và NLB <br>&emsp; + Cấu hình target groups <br>&emsp; + Thiết lập health checks <br>&emsp; + Cấu hình routing rules                                 | 18/07/2026   | 18/07/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu Auto Scaling: <br>&emsp; + Auto Scaling Groups (ASG) <br>&emsp; + Launch templates <br>&emsp; + Scaling policies (target tracking, step, scheduled) <br>&emsp; + Lifecycle hooks | 19/07/2026   | 19/07/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo Auto Scaling Groups <br>&emsp; + Cấu hình scaling policies <br>&emsp; + Tích hợp với Load Balancers <br>&emsp; + Kiểm tra scaling behavior               | 20/07/2026   | 20/07/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 1   | - Tạo staging environment: <br>&emsp; + Duplicate production infrastructure <br>&emsp; + Cấu hình databases riêng <br>&emsp; + Thiết lập staging domain <br>&emsp; + Test deployment process | 16/07/2026   | 16/07/2026      | Tài liệu Infrastructure |
+| 2   | - Nâng cao CloudWatch monitoring: <br>&emsp; + Custom metrics và dashboards <br>&emsp; + Log aggregation và analysis <br>&emsp; + Thiết lập alarms cho critical metrics <br>&emsp; + Cấu hình SNS notifications | 17/07/2026   | 17/07/2026      | <https://000051.awsstudygroup.com/> |
+| 3   | - Application testing: <br>&emsp; + Unit testing <br>&emsp; + Integration testing <br>&emsp; + End-to-end testing <br>&emsp; + Security testing | 18/07/2026   | 18/07/2026      | Tài liệu Testing frameworks |
+| 4   | - Load và performance testing: <br>&emsp; + Sử dụng Apache JMeter hoặc k6 <br>&emsp; + Test auto scaling behavior <br>&emsp; + Xác định bottlenecks <br>&emsp; + Tối ưu database queries | 19/07/2026   | 19/07/2026      | Load testing tools |
+| 5   | - Performance optimization: <br>&emsp; + Tối ưu container images <br>&emsp; + Tune database performance <br>&emsp; + Triển khai caching strategies <br>&emsp; + Review và tối ưu costs | 20/07/2026   | 20/07/2026      | Performance best practices |
 
 
 ### Kết quả đạt được tuần 6:
 
-* Nắm vững kiến thức cơ bản về Elastic Load Balancing:
-  * Hiểu các khái niệm và lợi ích của load balancing
-  * Application Load Balancer (Layer 7) cho HTTP/HTTPS traffic
-  * Network Load Balancer (Layer 4) cho TCP/UDP traffic
-  * Gateway Load Balancer cho third-party virtual appliances
-  * Lựa chọn loại load balancer phù hợp
+* **Môi trường Staging:**
+  * Tạo staging environment hoàn chỉnh mirror production
+  * Cấu hình RDS và DynamoDB instances riêng cho staging
+  * Thiết lập staging subdomain với SSL certificates
+  * Test deployment process và rollback procedures
+  * Xác thực tất cả integrations trong staging
 
-* Tìm hiểu các thành phần và tính năng của ELB:
-  * Target groups cho routing traffic đến instances
-  * Health checks để giám sát target health
-  * Listener rules cho routing dựa trên điều kiện
-  * SSL/TLS termination và quản lý certificate
-  * Cross-Zone load balancing
+* **Monitoring Nâng cao:**
+  * Xây dựng CloudWatch dashboards toàn diện
+  * Cấu hình custom metrics cho business KPIs
+  * Thiết lập log aggregation từ tất cả services
+  * Tạo alarms cho critical thresholds
+  * Triển khai automated notifications qua SNS
 
-* Thành công trong việc cấu hình load balancers:
-  * Tạo Application Load Balancers với nhiều target groups
-  * Thiết lập Network Load Balancers cho high-performance workloads
-  * Cấu hình health checks với ngưỡng phù hợp
-  * Triển khai path-based và host-based routing
-  * Thiết lập SSL/TLS certificates với ACM
+* **Testing & Đảm bảo Chất lượng:**
+  * Triển khai unit tests với >80% code coverage
+  * Thực hiện integration testing trên tất cả services
+  * Thực hiện end-to-end testing cho critical user flows
+  * Thực thi security testing và vulnerability scanning
+  * Xác thực disaster recovery procedures
 
-* Hiểu về bảo mật load balancer:
-  * Security groups cho load balancers
-  * Tích hợp AWS WAF cho application protection
-  * Access logs cho auditing và troubleshooting
-  * Connection draining và deregistration delay
+* **Performance Testing:**
+  * Thực hiện load testing với JMeter/k6
+  * Xác minh auto scaling triggers và behavior
+  * Test ứng dụng dưới 10x expected load
+  * Xác định và giải quyết performance bottlenecks
+  * Tối ưu database queries và indexes
 
-* Nắm vững kiến thức cơ bản về Auto Scaling:
-  * Các khái niệm Auto Scaling Groups (ASG)
-  * Launch templates và launch configurations
-  * Desired, minimum và maximum capacity
-  * Phân bổ instance qua các Availability Zones
+* **Tối ưu hóa:**
+  * Giảm container image sizes 40%
+  * Tối ưu database query performance
+  * Triển khai Redis caching cho frequently accessed data
+  * Tune ECS task resource allocation
+  * Review và tối ưu AWS costs
 
-* Tìm hiểu về Auto Scaling policies:
-  * Target tracking scaling (duy trì metric ở mức target)
-  * Step scaling (scale dựa trên CloudWatch alarms)
-  * Scheduled scaling (predictable load patterns)
-  * Predictive scaling (ML-based forecasting)
-
-* Thành công trong việc triển khai Auto Scaling:
-  * Tạo Auto Scaling Groups với launch templates
-  * Cấu hình target tracking policies cho CPU utilization
-  * Thiết lập step scaling policies với CloudWatch alarms
-  * Tích hợp ASG với load balancers
-  * Triển khai lifecycle hooks cho custom actions
-
-* Có kinh nghiệm thực tế với:
-  * Thiết kế kiến trúc high availability
-  * Các mẫu fault tolerance và resilience
-  * Tối ưu chi phí thông qua dynamic scaling
-  * Load testing và performance validation
-
-* Hiểu các best practices về scaling:
-  * Warm-up và cooldown periods
-  * Health check grace period
-  * Instance protection trong maintenance
-  * Lựa chọn scaling metrics
-
-* Xây dựng kiến thức nền tảng cho việc xây dựng ứng dụng có tính sẵn sàng cao, fault-tolerant và cost-effective trên AWS.
+* **Kết quả chính:**
+  * Staging environment hoạt động đầy đủ
+  * Monitoring và alerting toàn diện
+  * Test reports và coverage metrics
+  * Performance benchmarks và optimization results
+  * Sẵn sàng cho CI/CD implementation ở Tuần 7

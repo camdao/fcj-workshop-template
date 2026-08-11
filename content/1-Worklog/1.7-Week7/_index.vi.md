@@ -1,6 +1,6 @@
 ---
 title: "Worklog Tuần 7"
-date: 2024-01-01
+date: 2024-02-12
 weight: 7
 chapter: false
 pre: " <b> 1.7. </b> "
@@ -8,75 +8,72 @@ pre: " <b> 1.7. </b> "
 
 ### Mục tiêu tuần 7:
 
-* Nắm vững AWS CloudFormation cho Infrastructure as Code.
-* Hiểu về cấu trúc template và quản lý tài nguyên.
-* Tìm hiểu về stack operations và change sets.
-* Thực hành tự động hóa triển khai infrastructure.
+* Xây dựng và cấu hình CI/CD pipeline cho automated deployments.
+* Triển khai CloudFront CDN cho frontend content delivery.
+* Triển khai Infrastructure as Code với CloudFormation.
+* Tạo tài liệu và runbooks toàn diện.
+* Hoàn thiện deployment automation.
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Tìm hiểu CloudFormation Fundamentals: <br>&emsp; + Các khái niệm Infrastructure as Code <br>&emsp; + Cấu trúc template (YAML/JSON) <br>&emsp; + Resources, parameters, outputs <br>&emsp; + Intrinsic functions | 23/07/2026   | 23/07/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 3   | - Tìm hiểu Stack Management: <br>&emsp; + Tạo và cập nhật stacks <br>&emsp; + Change sets <br>&emsp; + Stack policies <br>&emsp; + Drift detection                                        | 24/07/2026   | 24/07/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - **Thực hành:** <br>&emsp; + Viết CloudFormation templates <br>&emsp; + Tạo stacks từ templates <br>&emsp; + Sử dụng parameters và mappings <br>&emsp; + Cấu hình outputs                 | 25/07/2026   | 25/07/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu Advanced Features: <br>&emsp; + Nested stacks <br>&emsp; + Cross-stack references <br>&emsp; + Custom resources <br>&emsp; + StackSets cho multi-account/region                | 26/07/2026   | 26/07/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo nested stacks <br>&emsp; + Triển khai cross-stack references <br>&emsp; + Sử dụng change sets <br>&emsp; + Deploy ứng dụng multi-tier                   | 27/07/2026   | 27/07/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 1   | - Thiết lập CI/CD pipeline: <br>&emsp; + Cấu hình GitHub Actions workflow <br>&emsp; + Thiết lập build và test stages <br>&emsp; + Cấu hình deployment stages <br>&emsp; + Thêm approval gates | 23/07/2026   | 23/07/2026      | <https://docs.github.com/actions> |
+| 2   | - Triển khai automated testing trong pipeline: <br>&emsp; + Unit tests <br>&emsp; + Integration tests <br>&emsp; + Security scans <br>&emsp; + Code quality checks | 24/07/2026   | 24/07/2026      | CI/CD best practices |
+| 3   | - Triển khai CloudFront CDN: <br>&emsp; + Tạo CloudFront distribution <br>&emsp; + Cấu hình S3 là origin <br>&emsp; + Thiết lập SSL certificate <br>&emsp; + Cấu hình caching policies <br>&emsp; + Thêm custom domain | 25/07/2026   | 25/07/2026      | <https://000011.awsstudygroup.com/> |
+| 4   | - Infrastructure as Code: <br>&emsp; + Viết CloudFormation templates <br>&emsp; + Parameterize templates <br>&emsp; + Tạo stacks cho tất cả resources <br>&emsp; + Version control IaC | 26/07/2026   | 26/07/2026      | <https://000040.awsstudygroup.com/> |
+| 5   | - Tài liệu và runbooks: <br>&emsp; + Tài liệu kiến trúc <br>&emsp; + Deployment procedures <br>&emsp; + Troubleshooting guides <br>&emsp; + Operational runbooks | 27/07/2026   | 27/07/2026      | Documentation standards |
 
 
 ### Kết quả đạt được tuần 7:
 
-* Nắm vững các khái niệm Infrastructure as Code:
-  * Hiểu lợi ích của IaC (version control, repeatability, automation)
-  * CloudFormation vs. các IaC tools khác
-  * Phương pháp declarative vs. imperative
-  * Quản lý infrastructure theo template
+* **Triển khai CI/CD Pipeline:**
+  * Xây dựng GitHub Actions pipeline hoàn chỉnh
+  * Cấu hình multi-stage workflow (build, test, deploy)
+  * Triển khai automated testing ở mỗi stage
+  * Thêm manual approval gates cho production
+  * Tích hợp với ECR và ECS cho deployments
+  * Thiết lập rollback mechanisms
+  * Đạt được zero-downtime deployments
 
-* Tìm hiểu cấu trúc CloudFormation template:
-  * Cú pháp YAML và JSON
-  * Các phần của template (Parameters, Resources, Outputs, Mappings, Conditions)
-  * Khai báo resource và properties
-  * Intrinsic functions (Ref, GetAtt, Sub, Join, Select)
+* **Automated Testing trong Pipeline:**
+  * Tích hợp unit tests với coverage reporting
+  * Thêm integration tests cho tất cả APIs
+  * Cấu hình security scanning (SAST/DAST)
+  * Triển khai code quality gates (linting, formatting)
+  * Thiết lập container vulnerability scanning
+  * Thêm performance regression tests
 
-* Thành công trong việc tạo CloudFormation templates:
-  * Viết templates cho VPC, subnets và security groups
-  * Tạo templates cho EC2 instances với user data
-  * Định nghĩa S3 buckets, IAM roles và policies
-  * Sử dụng parameters cho templates tái sử dụng
+* **Triển khai CloudFront CDN:**
+  * Tạo CloudFront distribution cho S3 frontend
+  * Cấu hình SSL/TLS với ACM certificate
+  * Thiết lập custom domain với Route 53
+  * Tối ưu caching policies cho performance
+  * Cấu hình cache invalidation on deployments
+  * Bật compression và HTTP/2
+  * Đạt được global content delivery với low latency
 
-* Hiểu về stack operations:
-  * Tạo stacks từ templates
-  * Cập nhật stacks với change sets
-  * Rolling back các updates thất bại
-  * Xóa stacks và dọn dẹp resources
+* **Infrastructure as Code:**
+  * Tạo CloudFormation templates toàn diện
+  * Modularize infrastructure thành nested stacks
+  * Parameterize cho multi-environment deployment
+  * Version control tất cả IaC trong Git
+  * Tài liệu hóa stack dependencies
+  * Triển khai change sets cho safe updates
+  * Có thể recreate entire infrastructure từ code
 
-* Tìm hiểu về change management:
-  * Change sets để preview updates
-  * Stack policies để bảo vệ resources
-  * Drift detection cho configuration compliance
-  * Update behaviors (No Interrupt, Some Interrupt, Replacement)
+* **Tài liệu & Runbooks:**
+  * Hoàn thành tài liệu kiến trúc với diagrams
+  * Viết deployment procedures và checklists
+  * Tạo troubleshooting guides cho common issues
+  * Tài liệu hóa operational procedures
+  * Tạo runbooks cho incident response
+  * Tài liệu hóa disaster recovery procedures
+  * Thiết lập knowledge base cho team
 
-* Nắm vững các tính năng CloudFormation:
-  * Conditions cho conditional resource creation
-  * Mappings cho environment-specific values
-  * Outputs để export values
-  * DependsOn cho explicit resource dependencies
-
-* Thành công trong việc triển khai advanced patterns:
-  * Nested stacks cho modular templates
-  * Cross-stack references với exports/imports
-  * Custom resources với Lambda
-  * Stack termination protection
-
-* Có kinh nghiệm thực tế với:
-  * Version controlling CloudFormation templates
-  * Tự động hóa infrastructure deployment
-  * Quản lý nhiều environments (dev, staging, prod)
-  * Troubleshooting stack creation failures
-
-* Hiểu các best practices về CloudFormation:
-  * Tổ chức templates để tái sử dụng
-  * Parameter validation và constraints
-  * Sử dụng AWS Systems Manager Parameter Store
-  * Ước tính chi phí trước khi deploy
-
-* Xây dựng kiến thức nền tảng cho các khái niệm IaC nâng cao, tích hợp CI/CD và multi-account/multi-region deployments với StackSets.
+* **Kết quả chính:**
+  * CI/CD pipeline tự động hoàn toàn
+  * CloudFront CDN phục vụ frontend globally
+  * Infrastructure as Code hoàn chỉnh
+  * Tài liệu toàn diện
+  * Operational runbooks
+  * Sẵn sàng cho final review và optimization ở Tuần 8

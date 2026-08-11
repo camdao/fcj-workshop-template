@@ -6,30 +6,63 @@ chapter: false
 pre: " <b> 1. </b> "
 ---
 
-**On this page**, you will need to introduce your worklog. **How** did you complete it? How many weeks did you take to complete the program? **What** did you do in those weeks?
+**On this page**, you will find the comprehensive worklog documenting the 8-week AWS internship journey at First Cloud Journey - AWS Study Group. This intensive program combines theoretical learning with hands-on project development, covering essential AWS services and modern DevOps practices.
 
-Typically, and as a standard, a worklog is carried out over about 3 months (throughout the internship period) with weekly contents as follows:
+The internship focuses on building a **Cloud-Native Web Application** using AWS services, implementing industry best practices for security, scalability, and cost optimization.
 
-**Week 1:** [Getting familiar with AWS and basic AWS services - AWS Budgets & IAM](1.1-week1/)
+## Weekly Overview
 
-**Week 2:** [Compute Essentials with Amazon EC2 & IAM Roles for EC2](1.2-week2/)
+**Week 1:** [AWS Fundamentals, Security & Networking](1.1-week1/)
+- AWS platform overview, IAM security, AWS Budgets cost management
+- VPC networking, subnets, security groups, and routing fundamentals
 
-**Week 3:** [VPC & Networking Fundamentals](1.3-week3/)
+**Week 2:** [Compute Services, Monitoring & Scalability](1.2-week2/)
+- Amazon EC2 instances and IAM roles
+- Load balancing (ALB/NLB), Auto Scaling Groups
+- CloudWatch monitoring and alerting
 
-**Week 4:** [Amazon S3 & Storage Services](1.4-week4/)
+**Week 3:** [Storage & Database Services](1.3-week3/)
+- Amazon S3 storage, versioning, and lifecycle policies
+- RDS relational databases (PostgreSQL/MySQL)
+- DynamoDB NoSQL and backup strategies
 
-**Week 5:** [Database Services - RDS & DynamoDB](1.5-week5/)
+**Week 4:** [Project Planning, Docker & CI/CD Fundamentals](1.4-week4/)
+- Project architecture design and planning
+- Docker containerization basics
+- CI/CD pipeline concepts and AWS security best practices
 
-**Week 6:** [Load Balancing & Auto Scaling](1.6-week6/)
+**Week 5:** [Application Development & Container Deployment](1.5-week5/)
+- Developing demo web application with backend API
+- Creating Dockerfiles and container images
+- Deploying to Amazon ECS using ECR
 
-**Week 7:** [CloudFormation & Infrastructure as Code](1.7-week7/)
+**Week 6:** [Staging Environment & System Testing](1.6-week6/)
+- Setting up staging environment
+- Advanced CloudWatch monitoring (logs, metrics, alarms)
+- Application testing and load testing
 
-**Week 8:** [CloudWatch & CloudTrail Monitoring](1.8-week8/)
+**Week 7:** [CI/CD Pipeline & Content Delivery](1.7-week7/)
+- Building automated CI/CD pipeline (GitHub Actions/CodePipeline)
+- CloudFront CDN deployment
+- Infrastructure as Code with CloudFormation
+- Documentation and runbooks
 
-**Week 9:** [Lambda & Serverless Architecture](1.9-week9/)
+**Week 8:** [System Review & Project Finalization](1.8-week8/)
+- Comprehensive system review and optimization
+- Cost analysis and optimization strategies
+- Final testing and quality assurance
+- Project presentation and knowledge transfer
 
-**Week 10:** [Container Services - ECS & ECR](1.10-week10/)
+## Capstone Project
 
-**Week 11:** [AWS Security & Best Practices](1.11-week11/)
+Throughout the internship, work focuses on building a **Cloud-Native Microservices Web Application** that demonstrates:
 
-**Week 12:** [Capstone Project & Internship Review](1.12-week12/)
+- **Frontend**: Static website (React/Vue) hosted on S3 with CloudFront CDN
+- **Backend**: Containerized microservices running on Amazon ECS
+- **Database**: RDS for relational data + DynamoDB for sessions/caching
+- **CI/CD**: Automated deployment pipeline with testing stages
+- **Monitoring**: Comprehensive CloudWatch dashboards and alerting
+- **Security**: IAM roles, security groups, SSL/TLS encryption, and AWS best practices
+- **Cost Management**: Budget alerts and resource optimization
+
+This hands-on project integrates all learned concepts into a production-ready application architecture.

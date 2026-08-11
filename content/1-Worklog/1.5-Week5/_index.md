@@ -1,6 +1,6 @@
 ---
 title: "Week 5 Worklog"
-date: 2024-01-01
+date: 2024-01-29
 weight: 5
 chapter: false
 pre: " <b> 1.5. </b> "
@@ -8,83 +8,56 @@ pre: " <b> 1.5. </b> "
 
 ### Week 5 Objectives:
 
-* Master AWS database services (RDS and DynamoDB).
-* Understand relational vs. NoSQL database concepts.
-* Learn database backup, restore, and high availability.
-* Practice deploying and managing databases on AWS.
+* Develop the demo web application (frontend and backend).
+* Containerize application components using Docker.
+* Set up Amazon ECR (Elastic Container Registry) for image storage.
+* Deploy containerized application on Amazon ECS (Elastic Container Service).
+* Configure ECS task definitions and services.
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Learn RDS Fundamentals: <br>&emsp; + RDS concepts and architecture <br>&emsp; + Supported database engines <br>&emsp; + RDS instance types <br>&emsp; + Multi-AZ deployments                        | 07/09/2026 | 07/09/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 3   | - Learn RDS Operations: <br>&emsp; + Automated backups <br>&emsp; + Database snapshots <br>&emsp; + Read replicas <br>&emsp; + Parameter groups and option groups                                     | 07/10/2026 | 07/10/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - **Practice:** <br>&emsp; + Launch RDS instances <br>&emsp; + Configure Multi-AZ <br>&emsp; + Create read replicas <br>&emsp; + Perform backup and restore                                           | 07/11/2026 | 07/11/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn DynamoDB Fundamentals: <br>&emsp; + NoSQL concepts <br>&emsp; + Tables, items, and attributes <br>&emsp; + Primary keys and indexes <br>&emsp; + Capacity modes (On-Demand vs. Provisioned)   | 07/12/2026 | 07/12/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Create DynamoDB tables <br>&emsp; + Perform CRUD operations <br>&emsp; + Configure GSI and LSI <br>&emsp; + Set up DynamoDB Streams                                      | 07/13/2026 | 07/13/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| Day | Task                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
+| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | --------------- | ----------------------------------------- |
+| 1   | - Develop frontend: <br>&emsp; + Create React/Vue application <br>&emsp; + Build UI components <br>&emsp; + Integrate with backend API <br>&emsp; + Test locally | 07/09/2026 | 07/09/2026      | React/Vue documentation |
+| 2   | - Develop backend API: <br>&emsp; + Create REST API endpoints <br>&emsp; + Implement business logic <br>&emsp; + Connect to RDS and DynamoDB <br>&emsp; + Test API locally | 07/10/2026 | 07/10/2026      | Node.js/Python docs |
+| 3   | - Containerize applications: <br>&emsp; + Write Dockerfiles <br>&emsp; + Optimize image sizes <br>&emsp; + Test containers locally <br>&emsp; + Create docker-compose for local dev | 07/11/2026 | 07/11/2026      | <https://docs.docker.com/> |
+| 4   | - Set up Amazon ECR and ECS: <br>&emsp; + Create ECR repositories <br>&emsp; + Push images to ECR <br>&emsp; + Create ECS cluster <br>&emsp; + Configure task definitions | 07/12/2026 | 07/12/2026      | <https://000048.awsstudygroup.com/> |
+| 5   | - Deploy to ECS: <br>&emsp; + Create ECS services <br>&emsp; + Configure load balancer integration <br>&emsp; + Set up auto scaling <br>&emsp; + Test deployment | 07/13/2026 | 07/13/2026      | <https://000048.awsstudygroup.com/> |
 
 
 ### Week 5 Achievements:
 
-* Mastered Amazon RDS fundamentals:
-  * Understanding managed relational database service
-  * Supported engines (MySQL, PostgreSQL, MariaDB, Oracle, SQL Server, Aurora)
-  * RDS instance classes and storage types
-  * Multi-AZ deployments for high availability
+* **Application Development:**
+  * Built functional React/Vue frontend with responsive UI
+  * Developed RESTful backend API with Node.js/Python
+  * Implemented authentication and authorization
+  * Connected backend to RDS (PostgreSQL) and DynamoDB
+  * Created comprehensive API documentation
 
-* Learned RDS operational tasks:
-  * Automated backup and retention policies
-  * Manual snapshots and restoration
-  * Read replicas for read scaling
-  * Parameter groups for database configuration
-  * Option groups for additional features
+* **Containerization:**
+  * Created optimized Dockerfiles for frontend and backend
+  * Implemented multi-stage builds to reduce image size
+  * Configured environment variables and secrets management
+  * Tested containers locally with docker-compose
+  * Prepared images for production deployment
 
-* Successfully deployed and managed RDS instances:
-  * Launched RDS instances with appropriate configurations
-  * Configured Multi-AZ for automatic failover
-  * Created read replicas across regions
-  * Performed backup and restore operations
-  * Monitored database performance
+* **Amazon ECR Setup:**
+  * Created private ECR repositories for application images
+  * Configured ECR lifecycle policies for image retention
+  * Pushed Docker images to ECR successfully
+  * Set up ECR scanning for vulnerabilities
 
-* Understood RDS security:
-  * VPC security groups for network access control
-  * IAM database authentication
-  * Encryption at rest and in transit
-  * Enhanced monitoring and Performance Insights
+* **Amazon ECS Deployment:**
+  * Created ECS Fargate cluster for serverless containers
+  * Defined ECS task definitions with appropriate resource allocation
+  * Configured ECS services with desired count and placement strategies
+  * Integrated ECS with Application Load Balancer from Week 2
+  * Set up ECS service auto scaling based on CPU/memory
+  * Configured CloudWatch Logs for container logging
+  * Successfully deployed application to production
 
-* Mastered DynamoDB fundamentals:
-  * NoSQL database concepts and use cases
-  * DynamoDB architecture and data model
-  * Tables, items, attributes, and data types
-  * Primary keys (partition key and sort key)
-
-* Learned DynamoDB indexing:
-  * Global Secondary Indexes (GSI)
-  * Local Secondary Indexes (LSI)
-  * Index design best practices
-  * Query vs. Scan operations
-
-* Successfully created and managed DynamoDB tables:
-  * Created tables with proper key design
-  * Performed CRUD operations via Console and CLI
-  * Configured secondary indexes
-  * Set up DynamoDB Streams for change capture
-
-* Understood DynamoDB capacity modes:
-  * On-Demand capacity for unpredictable workloads
-  * Provisioned capacity with auto-scaling
-  * Cost optimization strategies
-  * Read and write capacity units (RCU/WCU)
-
-* Learned DynamoDB advanced features:
-  * DynamoDB Streams for event-driven architectures
-  * Global Tables for multi-region replication
-  * Point-in-time recovery (PITR)
-  * Time to Live (TTL) for automatic data expiration
-
-* Gained practical experience with:
-  * Choosing between RDS and DynamoDB
-  * Database migration strategies
-  * Performance tuning and monitoring
-  * Backup and disaster recovery planning
-
-* Built foundational knowledge for database best practices, cost optimization, and integration with application architectures.
+* **Key Achievements:**
+  * Fully functional cloud-native application
+  * Containerized microservices architecture
+  * Production deployment on ECS
+  * Integrated with AWS services (RDS, DynamoDB, ALB)
+  * Ready for staging environment and testing in Week 6
