@@ -60,4 +60,3 @@ weight = 20
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
-
